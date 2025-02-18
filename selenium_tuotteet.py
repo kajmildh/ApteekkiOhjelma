@@ -111,11 +111,11 @@ def hjartat_selenium(urls, jamforpris):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                product_name = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/parent::div/preceding-sibling::div/h1").text
+                product_name = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/parent::div/preceding-sibling::div/preceding-sibling::div/div/h1").text
                 if jamforpris[i] == 1:
-                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/div[2]/span").text
+                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/p[2]").text
                 else:
-                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/div/span").text
+                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/p").text
                 product_currency = 'SEK'
 
                 medication.append([product_name, product_price, product_currency, urls[i]])
@@ -213,10 +213,9 @@ def kronansapotek_selenium(urls):
     try:
         try:
             driver.get(urls[0])
-
             wait = WebDriverWait(driver, 50)
             decline_button = wait.until(
-                EC.element_to_be_clickable((By.XPATH, "//img[@alt='Kronans Apotek']/parent::div/following-sibling::div[1]/div[2]/button[3]")))
+                EC.element_to_be_clickable((By.ID, "CybotCookiebotDialogBodyButtonDecline")))
 
             decline_button.click()
 
@@ -232,12 +231,12 @@ def kronansapotek_selenium(urls):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                name_element = driver.find_element(By.XPATH, "//strong[@data-testid='current-price']/parent::div/parent::div/preceding-sibling::div/div[1]/h1")
-                name_element_sub = driver.find_element(By.XPATH, "//strong[@data-testid='current-price']/parent::div/parent::div/preceding-sibling::div/div[1]/h2")
+                name_element = driver.find_element(By.XPATH, "//h1[@class='headline-xl mb-2']")
+                name_element_sub = driver.find_element(By.XPATH, "//h1[@class='headline-xl mb-2']/following-sibling::h2")
                 product_name = name_element.text if name_element else 'Name not found'
-                product_name_sub = name_element_sub.text if name_element_sub else 'Name not found'
+                product_name_sub = name_element_sub.text if name_element_sub else 'Description of name not found'
 
-                price_element = driver.find_element(By.CSS_SELECTOR, '[data-testid="current-price"]')
+                price_element = driver.find_element(By.XPATH, "//span[@data-testid='in-store-price']/span")
                 product_price = price_element.text if price_element else 'Price not found'
                 product_currency = 'SEK'
 
@@ -340,9 +339,10 @@ def lyfjaver_selenium(urls):
 
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-                product_name = soup.find('h1', class_='product_title entry-title has_description').get_text()
-                product_desc = soup.find('div', class_='description').get_text()
-                product_price = soup.find('p', class_='price').find('span', class_='woocommerce-Price-amount amount').find('bdi').get_text()
+                product_name = soup.find('h1', class_='text-5xl').get_text()
+                product_desc_element = soup.find('div', class_='flex flex-row gap-4 text-normal pb-4')
+                product_desc = product_desc_element.get_text() if product_desc_element else ""
+                product_price = driver.find_element(By.CSS_SELECTOR, ".kc-product-price.\\!items-start .display-price").get_attribute('textContent')
                 product_currency = 'ISK'
                 medication.append([product_name + ' ' + product_desc, product_price, product_currency, url])
             except Exception as e:
@@ -840,8 +840,8 @@ def treet_selenium(urls):
 
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-                product_name = soup.find('h4', class_='MuiTypography-root jss95 MuiTypography-h4 css-13ud5us').get_text()
-                product_price = soup.find('h3', class_='MuiTypography-root MuiTypography-h3 jss89 css-xlrzfn').get_text()
+                product_name = driver.find_element("xpath", "//h4[contains(@class, 'MuiTypography-root')]").text
+                product_price = driver.find_element("xpath", "//h3[contains(@class, 'MuiTypography-root')]").text
                 product_currency = 'EUR'
                 medication.append([product_name, product_price, product_currency, url])
             except Exception as e:

@@ -62,11 +62,11 @@ def keraa_tiedot():
     # Hjärtat
     pharmacy_url_4 = "apotekhjartat.se"
     URLs_4_normi = ['https://www.apotekhjartat.se/produkt/ipren-filmdragerad-tablett-400-mg-30-st/',
-                    'https://www.apotekhjartat.se/produkt/panodil-filmdragerad-tablett-500mg-blister-20-st/',
+                    'https://www.apotekhjartat.se/produkt/panodil-500-mg-filmdragerad-tablett-20-st/',
                     'https://www.apotekhjartat.se/produkt/losec-enterotablett-20-mg-14-st-1/',
                     'https://www.apotekhjartat.se/produkt/voltaren-gel-232-mgag-100-g/',
                     'https://www.apotekhjartat.se/produkt/clarityn-tablett-10-mg-30-tabletter-10/',
-                    'https://www.apotekhjartat.se/produkt/otrivin-menthol-nasspray-1-mgaml-10-ml/',
+                    'https://www.apotekhjartat.se/produkt/otrivin-menthol-nasspray-utan-konserveringsmedel-1mgoml/',
                     'https://www.apotekhjartat.se/produkt/hydrokortison-evolan-10-mgag-kram-20-g/']
     jamforpris = [1, 0, 1, 0, 0, 0, 0]
 
@@ -91,16 +91,16 @@ def keraa_tiedot():
     for i in fetched_data_5:
         i.append(pharmacy_url_5)
     medication.extend(fetched_data_5)
-
+    
     # Kronans Apotek
     pharmacy_url_6 = "kronansapotek.se"
     URLs_6_selenium = ['https://www.kronansapotek.se/Ipren-400-mg/p/088534/',
-                       'https://www.kronansapotek.se/Panodil/p/082808/',
+                       'https://www.kronansapotek.se/panodil-filmdragerad-tablett/p/196456/',
                        'https://www.kronansapotek.se/Losec/p/492546/',
                        'https://www.kronansapotek.se/Voltaren-/p/533022/',
                        'https://www.kronansapotek.se/clarityn-10-mg/p/154158/',
-                       'https://www.kronansapotek.se/Otrivin-Menthol-utan-konserveringsmedel/p/180539/',
-                       'https://www.kronansapotek.se/Hydrokortison-Evolan-10-mgg/p/112847/']
+                       'https://www.kronansapotek.se/otrivin-nasspray-menthol-1mg-ml-10ml/p/389805/',
+                       'https://www.kronansapotek.se/evolan-hydrokortison-kram/p/046776/']
 
     fetched_data_6 = seltuot.kronansapotek_selenium(URLs_6_selenium)
 
@@ -187,23 +187,23 @@ def keraa_tiedot():
     for i in fetched_data_11:
         i.append(pharmacy_url_11)
     medication.extend(fetched_data_11)
-
+    
     # Lyfjaver
     pharmacy_url_12 = "lyfjaver.is"
-    URLs_12_selenium = ['https://www.lyfjaver.is/vara/histasin-toflur-10-mg-30-stk/',
-                        'https://www.lyfjaver.is/vara/ibufen-toflur-400-mg-30-stk/',
-                        'https://www.lyfjaver.is/vara/mildison-lipid-krem-10-mg-g-15-g-feitt/',
-                        'https://www.lyfjaver.is/vara/omeprazol-actavis-sh-hylki-20-mg-14-stk/',
-                        'https://www.lyfjaver.is/vara/otrivin-menthol-ukonserveret-nefudi-1-mg-ml-10-ml/',
-                        'https://www.lyfjaver.is/vara/panodil-filmhtfl-500-mg-30-stk/',
-                        'https://www.lyfjaver.is/vara/voltaren-forte-hlaup-2320-mg-g-100-g/']
+    URLs_12_selenium = ['https://www.lyfjaver.is/verslun/ofnaemis-og-ondunarfaeralyf/histasin-toflur-10-mg-30-stk',
+                        'https://www.lyfjaver.is/verslun/verkjalyf/ibufen-toflur-400-mg-30-stk',
+                        'https://www.lyfjaver.is/verslun/hudlyf/mildison-lipid-krem-10-mg-g-15-g-feitt',
+                        'https://www.lyfjaver.is/verslun/magi-meltingarfaeri-og-munnur/omeprazol-actavis-sh-hylki-20-mg-14-stk',
+                        'https://www.lyfjaver.is/verslun/ofnaemis-og-ondunarfaeralyf/otrivin-menthol-ukonserveret-nefudi-1-mg-ml-10-ml-2',
+                        'https://www.lyfjaver.is/verslun/verkjalyf/panodil-filmhtfl-500-mg-30-stk',
+                        'https://www.lyfjaver.is/verslun/verkjalyf/voltaren-forte-hlaup-2320-mg-g-100-g']
 
     fetched_data_12 = seltuot.lyfjaver_selenium(URLs_12_selenium)
 
     for i in fetched_data_12:
         i.append(pharmacy_url_12)
     medication.extend(fetched_data_12)
-
+    
     # Holte Apotek
     pharmacy_url_13 = "apoteket-online.dk/apotek/holte-apotek"
     URLs_13_selenium = ['https://apoteket-online.dk/ipren-tabl-200-mg-184963',
@@ -2578,7 +2578,7 @@ def keraa_tiedot():
     for i in fetched_data_164:
         i.append(pharmacy_url_164)
     medication.extend(fetched_data_164)
-
+    
     # Espoonlahden apteekki
     pharmacy_url_165 = "app.treet.fi/pharmacy/espoonlahden-apteekki"
     URLs_165_selenium = ['https://app.treet.fi/pharmacy/espoonlahden-apteekki/product/117648',
@@ -3293,7 +3293,7 @@ def keraa_tiedot():
     for i in fetched_data_211:
         i.append(pharmacy_url_211)
     medication.extend(fetched_data_211)
-
+    
     # Pakilan apteekki
     pharmacy_url_212 = "kehaykkosenapteekki.fi"
     URLs_212_normi = ['https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/117648',
