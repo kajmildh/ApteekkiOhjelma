@@ -8,3 +8,11 @@ __pycache__/
 
 # Ignore PyCharm/JetBrains settings
 .idea/
+
+Kaikki_linkit.xlsx/
+
+Lääkedatan_yhdistely.do/
+
+lääkepilottiohjelma_instructions.docx/
+
+yhdistetty_lääkedata.dta/
