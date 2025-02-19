@@ -838,8 +838,6 @@ def treet_selenium(urls):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                soup = BeautifulSoup(driver.page_source, 'html.parser')
-
                 product_name = driver.find_element("xpath", "//h4[contains(@class, 'MuiTypography-root')]").text
                 product_price = driver.find_element("xpath", "//h3[contains(@class, 'MuiTypography-root')]").text
                 product_currency = 'EUR'
