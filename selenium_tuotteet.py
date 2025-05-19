@@ -84,7 +84,7 @@ def yliopistonapteekki_selenium(urls, data_value, product_number):
     return medication
 
 
-def hjartat_selenium(urls, jamforpris):
+def hjartat_selenium(urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -111,11 +111,8 @@ def hjartat_selenium(urls, jamforpris):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                product_name = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/parent::div/preceding-sibling::div/preceding-sibling::div/div/h1").text
-                if jamforpris[i] == 1:
-                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/p[2]").text
-                else:
-                    product_price = driver.find_element(By.XPATH, "//button[@data-pw='add-article-to-cart-button']/parent::div/parent::div/preceding-sibling::div/div[2]/p").text
+                product_name = driver.find_element(By.XPATH, "//main[@id='maincontent']/section/div/div/h1").text
+                product_price = driver.find_element(By.XPATH, "//main[@id='maincontent']//span[contains(text(), 'Butikspris:')]").text
                 product_currency = 'SEK'
 
                 medication.append([product_name, product_price, product_currency, urls[i]])
@@ -161,7 +158,7 @@ def herreapotek_selenium(urls):
 def apoteket_selenium(urls):
     medication = []
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = webdriver.Firefox(options=options)
 
     try:
@@ -189,7 +186,7 @@ def apoteket_selenium(urls):
                 name_element = driver.find_element(By.CSS_SELECTOR, '[data-cy="product-name"]')
                 product_name = name_element.text if name_element else 'Name not found'
 
-                price_element = driver.find_element(By.XPATH, '//*[contains(@class, "price-")]')
+                price_element = driver.find_element(By.XPATH, '//*[contains(@class, "inStorePrice")]')
                 product_price = price_element.text if price_element else 'Price not found'
                 product_currency = 'SEK'
 
@@ -652,7 +649,7 @@ def med24apotek_selenium(urls):
 
     return medication
 
-def wolt_selenium(urls, currency):
+def wolt_selenium(urls, currency, special_link):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -673,30 +670,24 @@ def wolt_selenium(urls, currency):
                 medication.append(['', '', '', url])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
-        for url in urls:
+        for i in range(len(urls)):
             try:
-                driver.get(url)
+                driver.get(urls[i])
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                if url == 'https://wolt.com/nb/nor/bergen/venue/ditt-apotek-bergen-brygge/otrivin-itemid-654a2a731dd00b7e2ce1b35d?search=otrivin':
-                    wait = WebDriverWait(driver, 50)
-                    otrivin_mentol_option = wait.until(
-                        EC.element_to_be_clickable(
-                            (By.XPATH, "//input[@value='654a0956089805f15cdd6337']/following-sibling::div")))
-                    otrivin_mentol_option.click()
-
-                    time.sleep(5)
-
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-                product_name = soup.find('h2', class_='sc-c5a2c443-3 gPMjyC').get_text()
+                if special_link[i] == 1: #(lohja, koivuhaka); otrivin
+                    product_name = driver.find_element(By.XPATH, "//*[@id=':R196piq:']/div/aside/div[2]/div/div/div/div[1]/div/h2").text
+                else:
+                    product_name = driver.find_element(By.XPATH, "//*[@id=':R196piq:']/div/aside/div[2]/div/div[2]/div/div[1]/div/h2").text
                 product_price = soup.find('span', {'data-test-id': 'product-modal.total-price'}).get_text()
                 product_currency = currency
-                medication.append([product_name, product_price, product_currency, url])
+                medication.append([product_name, product_price, product_currency, urls[i]])
             except Exception as e:
-                medication.append(['', '', '', url])
-                print(f"An error occurred for URL {url}: {e}")
+                medication.append(['', '', '', urls[i]])
+                print(f"An error occurred for URL {urls[i]}: {e}")
 
     finally:
         driver.quit()
@@ -732,7 +723,7 @@ def apohem_selenium(urls):
                 time.sleep(SLEEP_AFTER_URL)
 
                 product_name = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/following-sibling::h1").text
-                product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/span").text
+                product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/div/span").text
                 product_currency = 'SEK'
                 medication.append([product_name, product_price, product_currency, url])
             except Exception as e:
@@ -838,8 +829,8 @@ def treet_selenium(urls):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                product_name = driver.find_element("xpath", "//h4[contains(@class, 'MuiTypography-root')]").text
-                product_price = driver.find_element("xpath", "//h3[contains(@class, 'MuiTypography-root')]").text
+                product_name = driver.find_element(By.XPATH, "//*[@id='root']/div[1]/div/div[2]/div[1]/div[1]/h1[1]").text
+                product_price = driver.find_element(By.XPATH, "//*[@id='root']/div[1]/div/div[2]/div[1]/div[2]/h2/span").text
                 product_currency = 'EUR'
                 medication.append([product_name, product_price, product_currency, url])
             except Exception as e:

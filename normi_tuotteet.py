@@ -36,24 +36,6 @@ def yliopistonapteekki(urls):
     return medication
 
 
-def hirvensalonapteekki(urls):
-    medication = []
-    for url in urls:
-        try:
-            response = requests.get(url)
-            soup = BeautifulSoup(response.content, 'html.parser')
-
-            product_name = soup.find('div', class_='product-info').find('h1', class_='product-name').get_text()
-            product_price = soup.find('div', class_='price').find('span', class_='taxful').get_text()
-            product_currency = 'EUR'
-            medication.append([product_name, product_price, product_currency, url])
-        except Exception as e:
-            print(f"An error occurred for URL {url}: {e}")
-
-    return medication
-
-
-
 def vitusapotek(urls):
     medication = []
     for url in urls:
@@ -232,8 +214,8 @@ def farmakeutAB(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h2', class_='product-title').get_text()
-            product_price = soup.find('p', class_='price').find('ins').find('span', class_='woocommerce-Price-amount amount').get_text()
+            product_name = soup.find('h2', class_='elementor-heading-title').get_text()
+            product_price = soup.find('span', class_='woocommerce-Price-amount amount').get_text()
             product_currency = 'SEK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
