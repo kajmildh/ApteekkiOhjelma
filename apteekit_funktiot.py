@@ -540,7 +540,7 @@ def keraa_tiedot():
                         'https://dozapotek.se/losec-enterotablett-20-mg-cheplapharm-arzneimittel-gmbh-14-styck-492546.html',
                         'https://dozapotek.se/voltaren-gel-23-2-mg-g-haleon-denmark-aps-100-gram-533022.html',
                         'https://dozapotek.se/clarityn-tablett-10-mg-bayer-ab-30-tablett-er-154158.html',
-                        'https://dozapotek.se/otrivin-menthol-utan-konserveringsmedel-nasspray-losning-1-mg-ml-10-milliliter-180539.html',
+                        'https://dozapotek.se/otrivin-menthol-utan-konserveringsmedel-nasspray-losning-1-mg-ml-10-milliliter-389805.html',
                         'https://dozapotek.se/hydrokortison-evolan-kram-10-mg-g-20-gram-046776.html']
 
     fetched_data_36 = seltuot.admenta_selenium(URLs_36_selenium)
@@ -616,7 +616,7 @@ def keraa_tiedot():
     pharmacy_url_42 = "tapiolanapteekki.fi"
     URLs_42_normi = ['https://www.tapiolanapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
                      'https://www.tapiolanapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://www.tapiolanapteekki.fi/fi/otrivin-menthol-sailytysaineeton-1-mg-ml-nenasumute-liuos-10-ml.html',
+                     'https://www.tapiolanapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
                      'https://www.tapiolanapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
                      'https://www.tapiolanapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
                      'https://www.tapiolanapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
@@ -1127,7 +1127,7 @@ def keraa_tiedot():
                      'https://www.veturiapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
                      'https://www.veturiapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
                      'https://www.veturiapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.veturiapteekki.fi/fi/otrivin-menthol-sailytysaineeton-1-mg-ml-nenasumute-liuos-10-ml.html']
+                     'https://www.veturiapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
 
     fetched_data_74 = nt.yliopistonapteekki(URLs_74_normi)
 
@@ -2817,7 +2817,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/jamsankosken-apteekki/product/056698',
                          'https://app.treet.fi/pharmacy/jamsankosken-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/jamsankosken-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/jamsankosken-apteekki/product/180539']
+                         'https://app.treet.fi/pharmacy/jamsankosken-apteekki/product/134589']
 
     fetched_data_181 = seltuot.treet_selenium(URLs_181_selenium)
 
@@ -2848,7 +2848,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/vuokko-apteekki/product/056698',
                          'https://app.treet.fi/pharmacy/vuokko-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/vuokko-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/vuokko-apteekki/product/180539']
+                         'https://app.treet.fi/pharmacy/vuokko-apteekki/product/134589']
 
     fetched_data_184 = seltuot.treet_selenium(URLs_184_selenium)
 
@@ -2894,7 +2894,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/117648',
                          'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/kirkkonummen-uusi-apteekki/product/048769']
 
     fetched_data_187 = seltuot.treet_selenium(URLs_187_selenium)
@@ -2910,7 +2910,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/kittilan-apteekki/product/117648',
                          'https://app.treet.fi/pharmacy/kittilan-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/kittilan-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/kittilan-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/kittilan-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/kittilan-apteekki/product/048769']
 
     fetched_data_188 = seltuot.treet_selenium(URLs_188_selenium)
@@ -2957,7 +2957,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/niiralan-apteekki/product/117648',
                          'https://app.treet.fi/pharmacy/niiralan-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/niiralan-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/niiralan-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/niiralan-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/niiralan-apteekki/product/048769']
 
     fetched_data_191 = seltuot.treet_selenium(URLs_191_selenium)
@@ -3033,7 +3033,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/muuramen-apteekki/product/056698',
                          'https://app.treet.fi/pharmacy/muuramen-apteekki/product/057965',
                          'https://app.treet.fi/pharmacy/muuramen-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/muuramen-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/muuramen-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/muuramen-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/muuramen-apteekki/product/117648']
 
@@ -3049,7 +3049,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/mantan-apteekki/product/152429',
                          'https://app.treet.fi/pharmacy/mantan-apteekki/product/057965',
                          'https://app.treet.fi/pharmacy/mantan-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/mantan-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/mantan-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/mantan-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/mantan-apteekki/product/117648']
 
@@ -3080,7 +3080,7 @@ def keraa_tiedot():
                          'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/056698',
                          'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/057965',
                          'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/131583',
-                         'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/oulun-merikosken-apteekki/product/117648']
 
@@ -3171,7 +3171,7 @@ def keraa_tiedot():
     URLs_206_selenium = ['https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/056698',
-                         'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/117648',
                          'https://app.treet.fi/pharmacy/siilinjarven-apteekki/product/057965']
@@ -3187,7 +3187,7 @@ def keraa_tiedot():
     URLs_207_selenium = ['https://app.treet.fi/pharmacy/sammon-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/sammon-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/sammon-apteekki/product/056698',
-                         'https://app.treet.fi/pharmacy/sammon-apteekki/product/180539',
+                         'https://app.treet.fi/pharmacy/sammon-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/sammon-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/sammon-apteekki/product/117648',
                          'https://app.treet.fi/pharmacy/sammon-apteekki/product/057965']
@@ -3200,7 +3200,7 @@ def keraa_tiedot():
 
     # Raunistulan apteekki
     pharmacy_url_208 = "app.treet.fi/pharmacy/raunistulan-apteekki"
-    URLs_208_selenium = ['https://app.treet.fi/pharmacy/raunistulan-apteekki/product/180539',
+    URLs_208_selenium = ['https://app.treet.fi/pharmacy/raunistulan-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/raunistulan-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/raunistulan-apteekki/product/048769',
                          'https://app.treet.fi/pharmacy/raunistulan-apteekki/product/117648',
@@ -3230,7 +3230,7 @@ def keraa_tiedot():
 
     # Koskikaran apteekki
     pharmacy_url_210 = "app.treet.fi/pharmacy/koskikaran-apteekki"
-    URLs_210_selenium = ['https://app.treet.fi/pharmacy/koskikaran-apteekki/product/180539',
+    URLs_210_selenium = ['https://app.treet.fi/pharmacy/koskikaran-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/koskikaran-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/koskikaran-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/koskikaran-apteekki/product/048769',
@@ -3246,7 +3246,7 @@ def keraa_tiedot():
 
     # Kivistön apteekki
     pharmacy_url_211 = "app.treet.fi/pharmacy/kiviston-apteekki"
-    URLs_211_selenium = ['https://app.treet.fi/pharmacy/kiviston-apteekki/product/180539',
+    URLs_211_selenium = ['https://app.treet.fi/pharmacy/kiviston-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/kiviston-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/kiviston-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/kiviston-apteekki/product/048769',
@@ -3264,7 +3264,7 @@ def keraa_tiedot():
     pharmacy_url_212 = "kehaykkosenapteekki.fi"
     URLs_212_normi = ['https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/117648',
                       'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/048769',
-                      'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/180539',
+                      'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/134589',
                       'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/057965',
                       'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/056698',
                       'https://www.kehaykkosenapteekki.fi/epages/K1A.sf/fi_FI/?ObjectPath=/Shops/K1A/Products/519994',
@@ -3293,13 +3293,12 @@ def keraa_tiedot():
 
     # Apteekki 360 ympyrätalo
     pharmacy_url_214 = "apteekki360.fi"
-    URLs_214 = ['https://apteekki360.fi/collections/all/products/burana-400-mg-tabl-kalvopaall-oriola?variant=42450129715452',
-                'https://apteekki360.fi/collections/all/products/hydrocortison-10-mg-g-emuls-voide-oriola?variant=42450215502076',
-                'https://apteekki360.fi/collections/all/products/otrivin-menthol-sailytysaineeton-1-mg-ml-nenasumute-liuos-tamro',
-                'https://apteekki360.fi/collections/all/products/panadol-500-mg-tabl-kalvopaall-tamro?variant=42450455199996',
-                'https://apteekki360.fi/collections/all/products/somac-control-20-mg-enterotabl-tamro?variant=42450230903036',
-                'https://apteekki360.fi/collections/all/products/voltaren-forte-232-mg-g-geeli-tamro?variant=42450090492156',
-                'https://apteekki360.fi/collections/all/products/zyrtec-10-mg-tabl-kalvopaall-oriola?variant=42450559336700']
+    URLs_214 = ['https://apteekki360.fi/products/burana-400-mg-kalvopaallysteinen-tabletti?_pos=1&_sid=2acd94771&_ss=r&_fid=5fd402d21&variant=42450129715452',
+                'https://apteekki360.fi/products/hydrokortisoni-10mg-emulsio-voide?_pos=3&_sid=7d49435e6&_ss=r&_fid=20d740a87&variant=42450215502076',
+                'https://apteekki360.fi/products/panadol-500-mg-tabletti-kalvopaallysteinen?variant=42450455199996',
+                'https://apteekki360.fi/products/somac-control-20mg-enterotabletti?variant=42450230903036',
+                'https://apteekki360.fi/products/voltaren-forte-232-mg-g-geeli?_pos=1&_sid=fae615ad5&_ss=r&_fid=5cc1a4f14&variant=42450090492156',
+                'https://apteekki360.fi/products/zyrtec-10mg-tabletti-kalvopaallysteinen?variant=42450559336700']
 
     fetched_data_214 = nt.ympyrätalonapteekki(URLs_214)
 
@@ -3333,8 +3332,7 @@ def keraa_tiedot():
                       'https://www.iapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://www.iapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/',
                       'https://www.iapteekki.fi/tuotteet/506/happosalpaajat/33614/056698-somac-control-enterotabletti-20-mg-14-fol/',
-                      'https://www.iapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
-                      'https://www.iapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/']
+                      'https://www.iapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/']
 
     fetched_data_216 = nt.ivalonapteekki(URLs_216_normi)
 
@@ -3396,7 +3394,7 @@ def keraa_tiedot():
                       'https://www.ykkosapteekki.fi/tuotteet/506/happosalpaajat/33614/056698-somac-control-enterotabletti-20-mg-14-fol/',
                       'https://www.ykkosapteekki.fi/tuotteet/396/kivun-paikallishoito/44610/519994-voltaren-forte-geeli-232-mgg-100-g/',
                       'https://www.ykkosapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
-                      'https://www.ykkosapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/']
+                      'https://www.ykkosapteekki.fi/tuotteet/398/nenan-tukkoisuus/91351/134589-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-10-ml/']
 
     fetched_data_220 = nt.ivalonapteekki(URLs_220_normi)
 
@@ -3442,7 +3440,6 @@ def keraa_tiedot():
                       'https://kouvolan-inkeroisten-apteekki.eapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://kouvolan-inkeroisten-apteekki.eapteekki.fi/tuotteet/396/kivun-paikallishoito/44610/519994-voltaren-forte-geeli-232-mgg-100-g/',
                       'https://kouvolan-inkeroisten-apteekki.eapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
-                      'https://kouvolan-inkeroisten-apteekki.eapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
                       'https://kouvolan-inkeroisten-apteekki.eapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/']
 
     fetched_data_223 = nt.ivalonapteekki(URLs_223_normi)
@@ -3453,14 +3450,13 @@ def keraa_tiedot():
 
     # Teerijärven apteekki
     pharmacy_url_224 = "apteekkini.fi"
-    URLs_224_normi = [
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/056698',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/057965',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/117648',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/519994',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/131583',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/180539',
-        'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectID=24354744']
+    URLs_224_normi = ['https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/056698',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/057965',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/117648',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/519994',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/131583',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectPath=/Shops/09022011-998764/Products/134589',
+                      'https://www.apteekkini.fi/epages/apteekkini.sf/fi_FI/?ObjectID=24354744']
 
     fetched_data_224 = nt.pakilanapteekki(URLs_224_normi)
 
@@ -3489,7 +3485,7 @@ def keraa_tiedot():
                       'https://www.etuapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://www.etuapteekki.fi/tuotteet/396/kivun-paikallishoito/44610/519994-voltaren-forte-geeli-232-mgg-100-g/',
                       'https://www.etuapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
-                      'https://www.etuapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
+                      'https://www.etuapteekki.fi/tuotteet/398/nenan-tukkoisuus/91351/134589-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-10-ml/',
                       'https://www.etuapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/']
 
     fetched_data_226 = nt.ivalonapteekki(URLs_226_normi)
@@ -3550,7 +3546,6 @@ def keraa_tiedot():
                       'https://lopen-apteekki.eapteekki.fi/tuotteet/506/happosalpaajat/33614/056698-somac-control-enterotabletti-20-mg-14-fol/',
                       'https://lopen-apteekki.eapteekki.fi/tuotteet/494/parasetamoli/80255/057965-panadol-tabletti-kalvopaallysteinen-500-mg-30-fol/',
                       'https://lopen-apteekki.eapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
-                      'https://lopen-apteekki.eapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
                       'https://lopen-apteekki.eapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/',
                       'https://lopen-apteekki.eapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/']
 
@@ -3626,7 +3621,6 @@ def keraa_tiedot():
     URLs_235_normi = ['https://www.apteekkipiste.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
                       'https://www.apteekkipiste.fi/tuotteet/396/kivun-paikallishoito/44610/519994-voltaren-forte-geeli-232-mgg-100-g/',
                       'https://www.apteekkipiste.fi/tuotteet/506/happosalpaajat/33614/056698-somac-control-enterotabletti-20-mg-14-fol/',
-                      'https://www.apteekkipiste.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
                       'https://www.apteekkipiste.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/',
                       'https://www.apteekkipiste.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://www.apteekkipiste.fi/tuotteet/494/parasetamoli/80255/057965-panadol-tabletti-kalvopaallysteinen-500-mg-30-fol/']
@@ -3639,15 +3633,15 @@ def keraa_tiedot():
 
     # Myllyn apteekki
     pharmacy_url_236 = "myllynapteekki.fi"
-    URLs_236_normi = ['https://www.myllynapteekki.fi/tuote/zyrtec-30-fol/',
-                      'https://www.myllynapteekki.fi/tuote/voltaren-forte-100-g/',
-                      'https://www.myllynapteekki.fi/tuote/somac-control-14-fol/',
-                      'https://www.myllynapteekki.fi/tuote/otrivin-menthol-sailytysaineeton-10-ml/',
-                      'https://www.myllynapteekki.fi/tuote/hydrocortison-20-g-2/',
-                      'https://www.myllynapteekki.fi/tuote/burana-30-fol-3/',
-                      'https://www.myllynapteekki.fi/tuote/panadol-novum-30-fol/']
+    URLs_236_normi = ['https://app.treet.fi/pharmacy/myllyn-apteekki/product/131583',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/519994',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/056698',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/134589',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/048769',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/117648',
+                      'https://app.treet.fi/pharmacy/myllyn-apteekki/product/057965']
 
-    fetched_data_236 = nt.myllynapteekki(URLs_236_normi)
+    fetched_data_236 = seltuot.treet_selenium(URLs_236_normi)
 
     for i in fetched_data_236:
         i.append(pharmacy_url_236)
@@ -3655,7 +3649,7 @@ def keraa_tiedot():
 
     # Saarijärven apteekki
     pharmacy_url_237 = "saarijarvenapteekki.fi"
-    URLs_237_selenium = ['https://app.treet.fi/pharmacy/saarijarven-apteekki/product/180539',
+    URLs_237_selenium = ['https://app.treet.fi/pharmacy/saarijarven-apteekki/product/134589',
                          'https://app.treet.fi/pharmacy/saarijarven-apteekki/product/131583',
                          'https://app.treet.fi/pharmacy/saarijarven-apteekki/product/519994',
                          'https://app.treet.fi/pharmacy/saarijarven-apteekki/product/048769',
@@ -3674,7 +3668,7 @@ def keraa_tiedot():
     URLs_238_normi = ['https://www.aitoapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
                       'https://www.aitoapteekki.fi/tuotteet/396/kivun-paikallishoito/44610/519994-voltaren-forte-geeli-232-mgg-100-g/',
                       'https://www.aitoapteekki.fi/tuotteet/506/happosalpaajat/33614/056698-somac-control-enterotabletti-20-mg-14-fol/',
-                      'https://www.aitoapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
+                      'https://www.aitoapteekki.fi/tuotteet/398/nenan-tukkoisuus/91351/134589-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-10-ml/',
                       'https://www.aitoapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/',
                       'https://www.aitoapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://www.aitoapteekki.fi/tuotteet/494/parasetamoli/80255/057965-panadol-tabletti-kalvopaallysteinen-500-mg-30-fol/']
@@ -3818,7 +3812,7 @@ def keraa_tiedot():
 
     # Hyvän mielen apteekki
     pharmacy_url_247 = "bonusapteekki.fi"
-    URLs_247_normi = ['https://www.bonusapteekki.fi/epages/Bonusapteekki.sf/fi_FI/?ObjectPath=/Shops/Bonusapteekki/Products/180539',
+    URLs_247_normi = ['https://www.bonusapteekki.fi/epages/Bonusapteekki.sf/fi_FI/?ObjectPath=/Shops/Bonusapteekki/Products/134589',
                       'https://www.bonusapteekki.fi/epages/Bonusapteekki.sf/fi_FI/?ObjectPath=/Shops/Bonusapteekki/Products/131583',
                       'https://www.bonusapteekki.fi/epages/Bonusapteekki.sf/fi_FI/?ObjectPath=/Shops/Bonusapteekki/Products/519994',
                       'https://www.bonusapteekki.fi/epages/Bonusapteekki.sf/fi_FI/?ObjectPath=/Shops/Bonusapteekki/Products/048769',
@@ -3834,8 +3828,7 @@ def keraa_tiedot():
 
     # Suolahden apteekki
     pharmacy_url_248 = "viherapteekki.fi"
-    URLs_248_normi = ['https://www.viherapteekki.fi/tuotteet/398/nenan-tukkoisuus/24360/180539-otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mgml-free/',
-                      'https://www.viherapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
+    URLs_248_normi = ['https://www.viherapteekki.fi/tuotteet/361/antihistamiinit/32148/131583-zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol/',
                       'https://www.viherapteekki.fi/tuotteet/384/kortisonivoiteet-ja-geelit/23437/048769-hydrocortison-emulsiovoide-1-20-g/',
                       'https://www.viherapteekki.fi/tuotteet/492/ibuprofeeni/22545/117648-burana-tabletti-kalvopaallysteinen-400-mg-30-fol/',
                       'https://www.viherapteekki.fi/tuotteet/494/parasetamoli/80255/057965-panadol-tabletti-kalvopaallysteinen-500-mg-30-fol/',
@@ -3846,7 +3839,7 @@ def keraa_tiedot():
     for i in fetched_data_248:
         i.append(pharmacy_url_248)
     medication.extend(fetched_data_248)
-    
+
     # Aabenraa Love Apotek
     pharmacy_url_249 = "apoteket-online.dk/apotek/aabenraa-loeve-apotek"
     URLs_249_selenium = ['https://apoteket-online.dk/ipren-tabl-200-mg-184963',
