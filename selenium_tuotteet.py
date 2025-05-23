@@ -1,4 +1,7 @@
+from multiprocessing.managers import RemoteError
+
 from selenium import webdriver
+from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
@@ -9,7 +12,7 @@ from bs4 import BeautifulSoup
 from selenium_stealth import stealth
 
 # Variables
-SLEEP_AFTER_URL = 15  # amount of sleep/waiting (s) after loading url and before scraping name and price
+SLEEP_AFTER_URL = 7  # amount of sleep/waiting (s) after loading url and before scraping name and price
 SLEEP_AFTER_DECLINEBUTTON = 7  # amount of sleep/waiting (s) after clicking all declinebuttons and before refreshing the page
 
 
@@ -158,7 +161,7 @@ def herreapotek_selenium(urls):
 def apoteket_selenium(urls):
     medication = []
     options = Options()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Firefox(options=options)
 
     try:
@@ -360,7 +363,7 @@ def apoteketonline_selenium(urls, location):
     try:
         try:
             driver.get(urls[0])
-            wait = WebDriverWait(driver, 50)
+            wait = WebDriverWait(driver, 25)
             decline_button = wait.until(
                 EC.element_to_be_clickable((By.ID, "declineButton")))
             decline_button.click()
@@ -371,14 +374,18 @@ def apoteketonline_selenium(urls, location):
             location_input.clear()
 
             location_input.send_keys(location)
-            time.sleep(15)
+            time.sleep(7)
             location_input.send_keys(Keys.RETURN)
 
+            time.sleep(3)
             choose_loc_button = wait.until(EC.element_to_be_clickable(
                 (By.XPATH, '//div[@class="resultlist"]/div[1]/button[@id="choosePharmacy"]')))
             choose_loc_button.click()
 
-            time.sleep(SLEEP_AFTER_DECLINEBUTTON)
+            time.sleep(5)
+            driver.get(urls[0])
+
+            time.sleep(SLEEP_AFTER_URL)
         except Exception as e:
             for url in urls:
                 medication.append(['', '', '', url])
@@ -390,12 +397,10 @@ def apoteketonline_selenium(urls, location):
 
                 time.sleep(SLEEP_AFTER_URL)
 
-                soup = BeautifulSoup(driver.page_source, 'html.parser')
-
-                product_name = soup.find('h1', class_='item-name').get_text()
-                product_desc = soup.find('p', class_='strength').get_text()
-                product_price_before_decimal = soup.find('div', id='price-block-outer').find('span',class_='first').get_text()
-                product_price_after_decimal = soup.find('div', id='price-block-outer').find('span',class_='second').get_text()
+                product_name = driver.find_element(By.CLASS_NAME, "item-name").text
+                product_desc = driver.find_element(By.CLASS_NAME, 'strength').text
+                product_price_before_decimal = driver.find_element(By.XPATH, '//*[@id="price-block-outer"]/div[1]/p[1]/span[1]').text
+                product_price_after_decimal = driver.find_element(By.XPATH, '//*[@id="price-block-outer"]/div[1]/p[1]/span[2]').text
                 product_currency = 'DKK'
                 medication.append([product_name + ' ' + product_desc, product_price_before_decimal + ',' + product_price_after_decimal, product_currency, url])
             except Exception as e:
@@ -721,6 +726,7 @@ def apohem_selenium(urls):
                 driver.get(url)
 
                 time.sleep(SLEEP_AFTER_URL)
+                print(driver.page_source)
 
                 product_name = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/following-sibling::h1").text
                 product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/div/span").text
@@ -956,6 +962,39 @@ def lansikeskuksenapteekki_selenium(urls, data_value):
             except Exception as e:
                 medication.append(['', '', '', urls[i]])
                 print(f"An error occurred for URL {urls[i]}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def apopro_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                try:
+                    product_name = driver.find_element(By.XPATH, "/html/body/main/article/section/div[2]/div[2]/div[2]/div[2]/h1").text
+                    product_desc = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[2]/ul/li[1]").text
+                except NoSuchElementException:
+                    product_name = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[1]/h1").text
+                    product_desc = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[1]/ul/li[1]").text
+
+                product_price = driver.find_element(By.XPATH, "//span[@data-testid='pdp-price-per-unit']").text
+                product_currency = 'DKK'
+                medication.append([product_name + ' ' + product_desc, product_price, product_currency, url])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
 
     finally:
         driver.quit()

@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests as requests
+from selenium.common import NoSuchElementException
 
 
 def tuurinapteekki(urls):
@@ -94,8 +95,8 @@ def apoteketsvalen(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('header', class_='col-md-10 page-header').get_text(strip=True)
-            product_price = soup.find('p', class_='price').get_text(strip=True)
+            product_name = soup.find('h3', class_='product-name').get_text(strip=True)
+            product_price = soup.find('span', class_='price').get_text(strip=True)
             product_currency = 'DKK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
@@ -111,8 +112,8 @@ def apotekhjem(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h1', itemprop='name').get_text(strip=True)
-            product_price = soup.find('span', itemprop='price').get_text(strip=True)
+            product_name = soup.find('div', class_='product-name').find('h1').get_text(strip=True)
+            product_price = soup.find('div', class_='product-price').find('span').get_text(strip=True)
             product_currency = 'NOK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
@@ -162,8 +163,8 @@ def dameapoteket(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h1', class_='product_title entry-title elementor-heading-title elementor-size-default').get_text()
-            product_price = soup.find('p', class_='price').find('bdi').get_text()
+            product_name = soup.find('h1', class_='font-semibold text-xl md:text-3xl lg:text-4xl mb-2').get_text()
+            product_price = soup.find('span', class_='crystallize-price text-2xl font-semibold').get_text()
             product_currency = 'NOK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
@@ -316,7 +317,7 @@ def seitsemänveljeksenapteekki(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('div', class_='product__title').get_text(strip=True)
+            product_name = soup.find('div', class_='product__title').find('h1').get_text(strip=True)
             product_price = soup.find('span', class_='price-item price-item--regular').get_text(strip=True)
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
@@ -333,8 +334,8 @@ def wiklundinapteekki(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h1', class_='product-title cell small-order-2 large-order-1').get_text(strip=True)
-            product_price = soup.find('div', class_='h4 price').get_text(strip=True)
+            product_name = soup.find('div', class_='product-block product-block__title').find('h1').get_text(strip=True)
+            product_price = soup.find('span', class_='price-item price-item--regular').get_text(strip=True)
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
@@ -354,24 +355,6 @@ def koivukylänapteekki(urls):
             product_price = soup.find('span', class_='price').get_text()
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
-        except Exception as e:
-            print(f"An error occurred for URL {url}: {e}")
-
-    return medication
-
-
-def apopro(urls):
-    medication = []
-    for url in urls:
-        try:
-            response = requests.get(url)
-            soup = BeautifulSoup(response.content, 'html.parser')
-
-            product_name = soup.find('h1', itemprop='name').get_text()
-            product_name_sub = soup.find('div', class_='mb5').get_text()
-            product_price = soup.find('span', itemprop='price').get_text()
-            product_currency = 'DKK'
-            medication.append([product_name + ", " + product_name_sub, product_price, product_currency, url])
         except Exception as e:
             print(f"An error occurred for URL {url}: {e}")
 
@@ -403,8 +386,11 @@ def ugleapotek(urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h1', class_='product_title entry-title elementor-heading-title elementor-size-default').get_text()
-            product_price = soup.find('p', class_='price').get_text()
+            product_name = soup.find('h1', class_='product_title entry-title').get_text()
+            if soup.find('p', class_='price').get_text() == "":
+                product_price = soup.find('meta', property='product:price:amount')["content"]
+            else:
+                product_price = soup.find('p', class_='price').get_text()
             product_currency = 'DKK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:

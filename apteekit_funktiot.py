@@ -91,7 +91,7 @@ def keraa_tiedot():
     for i in fetched_data_6:
         i.append(pharmacy_url_6)
     medication.extend(fetched_data_6)
-    
+
     # Apotek 1
     pharmacy_url_7 = "apotek1.no"
     URLs_7_selenium = ['https://www.apotek1.no/produkter/hydrokortison-1-krem-20g-112847p',
@@ -158,7 +158,7 @@ def keraa_tiedot():
 
     # Lyf Og Heilsa
     pharmacy_url_11 = "lyfogheilsa.is"
-    URLs_11_normi = ['https://www.lyfogheilsa.is/lausasolulyf/2531',
+    URLs_11_normi = ['https://www.lyfogheilsa.is/lausasolulyf/16049',
                      'https://www.lyfogheilsa.is/lausasolulyf/2542',
                      'https://www.lyfogheilsa.is/lausasolulyf/2552',
                      'https://www.lyfogheilsa.is/lausasolulyf/3067',
@@ -171,7 +171,7 @@ def keraa_tiedot():
     for i in fetched_data_11:
         i.append(pharmacy_url_11)
     medication.extend(fetched_data_11)
-    
+
     # Lyfjaver
     pharmacy_url_12 = "lyfjaver.is"
     URLs_12_selenium = ['https://www.lyfjaver.is/verslun/ofnaemis-og-ondunarfaeralyf/histasin-toflur-10-mg-30-stk',
@@ -187,7 +187,7 @@ def keraa_tiedot():
     for i in fetched_data_12:
         i.append(pharmacy_url_12)
     medication.extend(fetched_data_12)
-    
+
     # Holte Apotek
     pharmacy_url_13 = "apoteket-online.dk/apotek/holte-apotek"
     URLs_13_selenium = ['https://apoteket-online.dk/ipren-tabl-200-mg-184963',
@@ -242,7 +242,7 @@ def keraa_tiedot():
                         'https://www.akureyrarapotek.is/verslun/lausasolulyf/ibufen-400mg-30stk?q=ibufen',
                         'https://www.akureyrarapotek.is/verslun/lausasolulyf/mildison-lipid-10mg-g-15g',
                         'https://www.akureyrarapotek.is/verslun/lausasolulyf/omeprazol-actavis-20mg-14stk?q=omeprazol',
-                        'https://www.akureyrarapotek.is/verslun/lausasolulyf/otrivin-menthol-ukonserveret-1mg-ml-10ml?q=otrivin',
+                        'https://www.akureyrarapotek.is/verslun/lausasolulyf/otrivin-menthol-ukonserveret-10ml-1mg-ml',
                         'https://www.akureyrarapotek.is/verslun/lausasolulyf/panodil-500mg-30stk?q=panodil',
                         'https://www.akureyrarapotek.is/verslun/lausasolulyf/voltaren-forte-23-2mg-g-100g?q=voltaren']
 
@@ -251,7 +251,6 @@ def keraa_tiedot():
     for i in fetched_data_16:
         i.append(pharmacy_url_16)
     medication.extend(fetched_data_16)
-
 
     # Efstaleitis
     pharmacy_url_17 = "lyfjaapotekid.is"
@@ -329,7 +328,7 @@ def keraa_tiedot():
 
     # Apotek for deg
     pharmacy_url_22 = "apotekfordeg.no"
-    URLs_22_selenium = ['https://www.apotekfordeg.no/products/hydrokortison-evolan-10-mgg-krem-20-g',
+    URLs_22_selenium = ['https://www.apotekfordeg.no/products/hydrokortison-evolan-10-mgg-krem-20-g2',
                         'https://www.apotekfordeg.no/products/ibux-tabletter-400-mg-20-stk',
                         'https://www.apotekfordeg.no/products/otrivin-mentol-1-mgml-nesespray-10-ml',
                         'https://www.apotekfordeg.no/products/panodil-tabletter-500-mg-20-stk',
@@ -408,12 +407,12 @@ def keraa_tiedot():
 
     # Dameapoteket
     pharmacy_url_27 = "dameapoteket.no"
-    URLs_27_normi = ['https://dameapoteket.no/butikk/ibux-tab-400mg-20-enpac/',
-                     'https://dameapoteket.no/butikk/panodil-tab-500mg-20-enpac/',
-                     'https://dameapoteket.no/butikk/voltarol-forte-gel-23-2mg-g-100-g/',
-                     'https://dameapoteket.no/butikk/zyrtec-tab-10mg-30-enpac/',
-                     'https://dameapoteket.no/butikk/otrivin-nesespray-1mg-ml-mentol-10-ml/',
-                     'https://dameapoteket.no/butikk/hydrokortison-evol-krem-10mg-20-g/']
+    URLs_27_normi = ['https://dameapoteket.no/shop/apotekvarer/ibux-tabletter-400mg-20-enpac',
+                     'https://dameapoteket.no/shop/apotekvarer/panodil-tab-500mg-20-enpac',
+                     'https://dameapoteket.no/shop/apotekvarer/voltarol-forte-gel-232mgg-100-g',
+                     'https://dameapoteket.no/shop/apotekvarer/allergi/zyrtec-10-mg-tabletter-30-stk',
+                     'https://dameapoteket.no/shop/apotekvarer/otrivin-nesespray-1mgml-mentol-10-ml',
+                     'https://dameapoteket.no/shop/apotekvarer/hydrokortison-evolan-10-mgg-krem-20-g']
 
     fetched_data_27 = nt.dameapoteket(URLs_27_normi)
 
@@ -429,7 +428,7 @@ def keraa_tiedot():
                      'https://www.farmasiet.no/catalog/smerte/forstuelse/voltarol-forte-gel-232mgg-100,5001535',
                      'https://www.farmasiet.no/catalog/allergi-og-astma/pollenallergi/zyrtec-tab-10mg-30,5000298',
                      'https://www.farmasiet.no/catalog/feber-og-forkjolelse/nesespray-og-nesedraper/otrivin-nesespr-1mgml-mentol-10,5000195',
-                     'https://www.farmasiet.no/catalog/allergi-og-astma/eksem/hydrokortison-evol-krem-10mg-20,5000074']
+                     'https://www.farmasiet.no/catalog/allergi-og-astma/eksem/hydrokortison-evol-krem-10mgg-20,5113127?originName=Brand+Page']
 
     fetched_data_28 = nt.farmasiet(URLs_28_normi)
 
@@ -488,7 +487,7 @@ def keraa_tiedot():
     # Apohem
     pharmacy_url_33 = "apohem.se"
     URLs_33_selenium = ['https://www.apohem.se/vark-feber/huvudvark/ipren-400mg-ibuprofen-30-tabletter',
-                        'https://www.apohem.se/vark-feber/huvudvark/panodil-500mg-paracetamol-20-tabletter',
+                        'https://www.apohem.se/vark-feber/huvudvark/panodil-paracetamol-filmdragerad-tablett-500mg-20-tabletter',
                         'https://www.apohem.se/vark-feber/ledvark-artros/voltaren-232-mgg-gel-100g',
                         'https://www.apohem.se/allergi/pollenallergi/antihistamin-vid-pollenallergi/clarityn-tabletter-10-mg-30-st',
                         'https://www.apohem.se/forkylning/bihaleinflammation/nasspray-och-tabletter/otrivin-nasspray-1mgml-10-ml',
@@ -557,7 +556,7 @@ def keraa_tiedot():
                      'https://www.meds.se/voltaren-gel-23-2-mg-g-100-g',
                      'https://www.meds.se/allergi/allergitabletter/clarityn-10-mg-30-tablett-tablett',
                      'https://www.meds.se/otrivin-menthol-nasspray-losning-1-mg-ml-10-ml',
-                     'https://www.meds.se/hydrokortison-evolan-kram-10-mg-g-20-g']
+                     'https://www.meds.se/evolan/hydrokortison-evolan-10-mg-g-20-gram-kram']
 
     fetched_data_37 = nt.medsapotekAB(URLs_37_normi)
 
@@ -706,7 +705,7 @@ def keraa_tiedot():
     for i in fetched_data_47:
         i.append(pharmacy_url_47)
     medication.extend(fetched_data_47)
-    
+
     # Helsingin kaivopuiston apteekki
     pharmacy_url_48 = "oloapteekki.fi"
     URLs_48_normi = ['https://www.oloapteekki.fi/burana-400-mg-30-fol-tabl-kalvopaall?queryID=0b40b2558c42fa9d2a993a0b5db7c395&objectID=16935&indexName=olo_prod_fi_products',
@@ -757,15 +756,15 @@ def keraa_tiedot():
 
     # Lauttasaaren keskusapteekki
     pharmacy_url_51 = "e-apteekkari.fi"
-    URLs_51_normi = ['https://www.e-apteekkari.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.e-apteekkari.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://www.e-apteekkari.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                     'https://www.e-apteekkari.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.e-apteekkari.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://www.e-apteekkari.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://www.e-apteekkari.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html']
+    URLs_51_normi = ['https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/117648',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/048769',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/134589',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/057965',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/056698',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/519994',
+                     'https://app.treet.fi/pharmacy/lauttiksen-apteekki/product/131583']
 
-    fetched_data_51 = nt.yliopistonapteekki(URLs_51_normi)
+    fetched_data_51 = seltuot.treet_selenium(URLs_51_normi)
 
     for i in fetched_data_51:
         i.append(pharmacy_url_51)
@@ -898,20 +897,20 @@ def keraa_tiedot():
 
     # Pasilan apteekki
     pharmacy_url_60 = "pasilanapteekinverkkokauppa.fi"
-    URLs_60_normi = ['https://www.pasilanapteekinverkkokauppa.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://www.pasilanapteekinverkkokauppa.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html']
+    URLs_60_normi = ['https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=34294',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=34075',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=64290',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=35414',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=35143',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=35230',
+                     'https://pasilanapteekinverkkokauppa.fi/epages/paa.sf/fi_FI/?ObjectID=33411']
 
-    fetched_data_60 = nt.yliopistonapteekki(URLs_60_normi)
+    fetched_data_60 = nt.pakilanapteekki(URLs_60_normi)
 
     for i in fetched_data_60:
         i.append(pharmacy_url_60)
     medication.extend(fetched_data_60)
-    
+
     # Kaartin apteekki
     pharmacy_url_61 = "wolt.com/fi/fin/helsinki/venue/kaartin-apteekki"
     URLs_61_selenium = ['https://wolt.com/fi/fin/helsinki/venue/kaartin-apteekki/burana-400-mg-itemid-662766bda6c9a3a2e16b37d1?search=burana',
@@ -1024,20 +1023,20 @@ def keraa_tiedot():
     medication.extend(fetched_data_67)
 
     # Joensuun uusi apteekki
-    pharmacy_url_68 = "uusiverkkoapteekki.fi"
-    URLs_68_normi = ['https://uusiverkkoapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://uusiverkkoapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://uusiverkkoapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://uusiverkkoapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://uusiverkkoapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://uusiverkkoapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://uusiverkkoapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
-
-    fetched_data_68 = nt.yliopistonapteekki(URLs_68_normi)
-
-    for i in fetched_data_68:
-        i.append(pharmacy_url_68)
-    medication.extend(fetched_data_68)
+    #pharmacy_url_68 = "uusiverkkoapteekki.fi"
+    #URLs_68_normi = ['https://uusiverkkoapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://uusiverkkoapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
+    #
+    #fetched_data_68 = nt.yliopistonapteekki(URLs_68_normi)
+    #
+    #for i in fetched_data_68:
+    #    i.append(pharmacy_url_68)
+    #medication.extend(fetched_data_68)
 
     # Juuan apteekki
     pharmacy_url_69 = "juuanapteekki.fi"
@@ -1105,15 +1104,15 @@ def keraa_tiedot():
 
     # Sonaatti apteekki
     pharmacy_url_73 = "netti-apteekki.fi"
-    URLs_73_normi = ['https://www.netti-apteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.netti-apteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.netti-apteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://www.netti-apteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://www.netti-apteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://www.netti-apteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.netti-apteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
+    URLs_73_normi = ['https://app.treet.fi/pharmacy/sonaatti-apteekki/product/057965',
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/117648',
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/048769',
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/056698',
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/519994',
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/131583',
+                     '']
 
-    fetched_data_73 = nt.yliopistonapteekki(URLs_73_normi)
+    fetched_data_73 = seltuot.treet_selenium(URLs_73_normi)
 
     for i in fetched_data_73:
         i.append(pharmacy_url_73)
@@ -1184,20 +1183,20 @@ def keraa_tiedot():
     medication.extend(fetched_data_77)
 
     # Kaustisen apteekki
-    pharmacy_url_78 = "kaustisenapteekki.fi"
-    URLs_78_normi = ['https://www.kaustisenapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kaustisenapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kaustisenapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                     'https://www.kaustisenapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://www.kaustisenapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://www.kaustisenapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kaustisenapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
-
-    fetched_data_78 = nt.yliopistonapteekki(URLs_78_normi)
-
-    for i in fetched_data_78:
-        i.append(pharmacy_url_78)
-    medication.extend(fetched_data_78)
+    #pharmacy_url_78 = "kaustisenapteekki.fi"
+    #URLs_78_normi = ['https://www.kaustisenapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
+    #                 'https://www.kaustisenapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html']
+    #
+    #fetched_data_78 = nt.yliopistonapteekki(URLs_78_normi)
+    #
+    #for i in fetched_data_78:
+    #    i.append(pharmacy_url_78)
+    #medication.extend(fetched_data_78)
 
     # Kimito apotek
     pharmacy_url_79 = "kimitoapotek.fi"
@@ -1361,15 +1360,15 @@ def keraa_tiedot():
 
     # Kupion uusi apteekki
     pharmacy_url_89 = "kuopionuusiverkkoapteekki.fi"
-    URLs_89_normi = ['https://www.kuopionuusiverkkoapteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                     'https://www.kuopionuusiverkkoapteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html']
+    URLs_89_normi = ['https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/056698',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/057965',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/117648',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/519994',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/131583',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/134589',
+                     'https://app.treet.fi/pharmacy/kuopion-uusi-apteekki/product/048769']
 
-    fetched_data_89 = nt.yliopistonapteekki(URLs_89_normi)
+    fetched_data_89 = seltuot.treet_selenium(URLs_89_normi)
 
     for i in fetched_data_89:
         i.append(pharmacy_url_89)
@@ -1454,15 +1453,15 @@ def keraa_tiedot():
 
     # Lauritsalan apteekki
     pharmacy_url_95 = "apotekasaimaa.fi"
-    URLs_95_normi = ['https://apotekasaimaa.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://apotekasaimaa.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://apotekasaimaa.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://apotekasaimaa.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://apotekasaimaa.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://apotekasaimaa.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                     'https://apotekasaimaa.fi/fi/hydrocortison-1-emuls-voide-20-g.html']
+    URLs_95_normi = ['https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=34462',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=36672',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=34229',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=34549',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=33984',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=85180',
+                     'https://apotekasaimaa.fi/epages/laa.sf/fi_FI/?ObjectID=34164']
 
-    fetched_data_95 = nt.yliopistonapteekki(URLs_95_normi)
+    fetched_data_95 = nt.pakilanapteekki(URLs_95_normi)
 
     for i in fetched_data_95:
         i.append(pharmacy_url_95)
@@ -1486,15 +1485,15 @@ def keraa_tiedot():
 
     # Liedon apteekki
     pharmacy_url_97 = "liedonverkkoapteekki.fi"
-    URLs_97_normi = ['https://liedonverkkoapteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
-                     'https://liedonverkkoapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                     'https://liedonverkkoapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                     'https://liedonverkkoapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                     'https://liedonverkkoapteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                     'https://liedonverkkoapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                     'https://liedonverkkoapteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html']
+    URLs_97_normi = ['https://app.treet.fi/pharmacy/liedon-apteekki/product/056698',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/057965',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/117648',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/519994',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/131583',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/134589',
+                     'https://app.treet.fi/pharmacy/liedon-apteekki/product/048769']
 
-    fetched_data_97 = nt.yliopistonapteekki(URLs_97_normi)
+    fetched_data_97 = seltuot.treet_selenium(URLs_97_normi)
 
     for i in fetched_data_97:
         i.append(pharmacy_url_97)
@@ -1547,7 +1546,7 @@ def keraa_tiedot():
     for i in fetched_data_100:
         i.append(pharmacy_url_100)
     medication.extend(fetched_data_100)
-    
+
     # Ensimmäinen apteekki
     pharmacy_url_101 = "apoteket.ax"
     URLs_101_normi = ['https://www.apoteket.ax/se/voltaren-forte-23-2-mg-g-geeli-100-g.html',
@@ -1661,15 +1660,15 @@ def keraa_tiedot():
 
     # Nokian 1. apteekki
     pharmacy_url_108 = "oma-apteekki.fi"
-    URLs_108_normi = ['https://www.oma-apteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://www.oma-apteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
-                      'https://www.oma-apteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.oma-apteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.oma-apteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://www.oma-apteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://www.oma-apteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html']
+    URLs_108_normi = ['https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=34935',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=34745',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=35009',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=33592',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=121580',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=33769',
+                      'https://www.oma-apteekki.fi/epages/na.sf/fi_FI/?ObjectID=34148']
 
-    fetched_data_108 = nt.yliopistonapteekki(URLs_108_normi)
+    fetched_data_108 = nt.pakilanapteekki(URLs_108_normi)
 
     for i in fetched_data_108:
         i.append(pharmacy_url_108)
@@ -1677,15 +1676,14 @@ def keraa_tiedot():
 
     # Koskenmäen apteekki
     pharmacy_url_109 = "koskenmaenapteekki.fi"
-    URLs_109_normi = ['https://www.koskenmaenapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://www.koskenmaenapteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
-                      'https://www.koskenmaenapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.koskenmaenapteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.koskenmaenapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://www.koskenmaenapteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://www.koskenmaenapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html']
+    URLs_109_normi = ['https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=33604',
+                      'https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=33875',
+                      'https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=33139',
+                      'https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=68559',
+                      'https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=33320',
+                      'https://www.koskenmaenapteekki.fi/epages/ka.sf/fi_FI/?ObjectID=33371']
 
-    fetched_data_109 = nt.yliopistonapteekki(URLs_109_normi)
+    fetched_data_109 = nt.pakilanapteekki(URLs_109_normi)
 
     for i in fetched_data_109:
         i.append(pharmacy_url_109)
@@ -1770,21 +1768,21 @@ def keraa_tiedot():
         i.append(pharmacy_url_114)
     medication.extend(fetched_data_114)
 
-    # Oulun keskus apteekki
-    pharmacy_url_115 = "oulunverkkoapteekki.fi"
-    URLs_115_normi = ['https://www.oulunverkkoapteekki.fi/voltaren-forte-geeli-23-2-mg-g-100-g.html',
-                      'https://www.oulunverkkoapteekki.fi/somac-control-enterotabletti-20-mg-14-fol.html',
-                      'https://www.oulunverkkoapteekki.fi/panadol-tabletti-kalvopaallysteinen-500-mg-30-fol.html',
-                      'https://www.oulunverkkoapteekki.fi/zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol.html',
-                      'https://www.oulunverkkoapteekki.fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://www.oulunverkkoapteekki.fi/hydrocortison-emulsiovoide-1-20-g.html',
-                      'https://www.oulunverkkoapteekki.fi/burana-tabletti-kalvopaallysteinen-400-mg-30-fol.html']
-
-    fetched_data_115 = nt.yliopistonapteekki(URLs_115_normi)
-
-    for i in fetched_data_115:
-        i.append(pharmacy_url_115)
-    medication.extend(fetched_data_115)
+    # Oulun keskus apteekki // VERKKOAPTEEKKI PÄÄTTYNYT
+    #pharmacy_url_115 = "oulunverkkoapteekki.fi"
+    #URLs_115_normi = ['https://www.oulunverkkoapteekki.fi/voltaren-forte-geeli-23-2-mg-g-100-g.html',
+    #                  'https://www.oulunverkkoapteekki.fi/somac-control-enterotabletti-20-mg-14-fol.html',
+    #                  'https://www.oulunverkkoapteekki.fi/panadol-tabletti-kalvopaallysteinen-500-mg-30-fol.html',
+    #                  'https://www.oulunverkkoapteekki.fi/zyrtec-tabletti-kalvopaallysteinen-10-mg-30-fol.html',
+    #                  'https://www.oulunverkkoapteekki.fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
+    #                  'https://www.oulunverkkoapteekki.fi/hydrocortison-emulsiovoide-1-20-g.html',
+    #                  'https://www.oulunverkkoapteekki.fi/burana-tabletti-kalvopaallysteinen-400-mg-30-fol.html']
+    #
+    #fetched_data_115 = nt.yliopistonapteekki(URLs_115_normi)
+    #
+    #for i in fetched_data_115:
+    #    i.append(pharmacy_url_115)
+    #medication.extend(fetched_data_115)
 
     # Pateniemen apteekki
     pharmacy_url_116 = "pateniemenverkkoapteekki.fi"
@@ -1944,13 +1942,12 @@ def keraa_tiedot():
 
     # Tammisaaren apteekki
     pharmacy_url_126 = "ekenas1apotek.fi"
-    URLs_126_normi = ['https://ekenas1apotek.fi/se/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://ekenas1apotek.fi/se/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://ekenas1apotek.fi/se/somac-control-20-mg-enterotabl-14-fol.html',
-                      'https://ekenas1apotek.fi/se/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://ekenas1apotek.fi/se/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://ekenas1apotek.fi/se/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                      'https://ekenas1apotek.fi/se/panadol-500-mg-tabl-kalvopaall-30-fol.html']
+    URLs_126_normi = ['https://shop.ekenas1apotek.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
+                      'https://shop.ekenas1apotek.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
+                      'https://shop.ekenas1apotek.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html',
+                      'https://shop.ekenas1apotek.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
+                      'https://shop.ekenas1apotek.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
+                      'https://shop.ekenas1apotek.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/panadol-500-mg-tabl-kalvopaall-30-fol.html']
 
     fetched_data_126 = nt.yliopistonapteekki(URLs_126_normi)
 
@@ -1992,15 +1989,14 @@ def keraa_tiedot():
 
     # Riihimäen aurinkoapteekki
     pharmacy_url_129 = "aurinkonet.fi"
-    URLs_129_normi = ['https://aurinkonet.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://aurinkonet.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://aurinkonet.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                      'https://aurinkonet.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://aurinkonet.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://aurinkonet.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                      'https://aurinkonet.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html']
+    URLs_129_normi = ['https://app.treet.fi/pharmacy/aurinko-apteekki/product/131583',
+                      'https://app.treet.fi/pharmacy/aurinko-apteekki/product/519994',
+                      'https://app.treet.fi/pharmacy/aurinko-apteekki/product/056698',
+                      'https://app.treet.fi/pharmacy/aurinko-apteekki/product/048769',
+                      'https://app.treet.fi/pharmacy/aurinko-apteekki/product/117648',
+                      'https://app.treet.fi/pharmacy/aurinko-apteekki/product/057965']
 
-    fetched_data_129 = nt.yliopistonapteekki(URLs_129_normi)
+    fetched_data_129 = seltuot.treet_selenium(URLs_129_normi)
 
     for i in fetched_data_129:
         i.append(pharmacy_url_129)
@@ -2182,15 +2178,15 @@ def keraa_tiedot():
 
     # Haka apteekki
     pharmacy_url_141 = "hakaeapteekki.fi"
-    URLs_141_normi = ['https://hakaeapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://hakaeapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://hakaeapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html',
-                      'https://hakaeapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://hakaeapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://hakaeapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                      'https://hakaeapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html']
+    URLs_141_normi = ['https://app.treet.fi/pharmacy/haka-apteekki/product/131583',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/519994',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/056698',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/134589',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/048769',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/117648',
+                      'https://app.treet.fi/pharmacy/haka-apteekki/product/057965']
 
-    fetched_data_141 = nt.yliopistonapteekki(URLs_141_normi)
+    fetched_data_141 = seltuot.treet_selenium(URLs_141_normi)
 
     for i in fetched_data_141:
         i.append(pharmacy_url_141)
@@ -2310,15 +2306,15 @@ def keraa_tiedot():
 
     # Nova apteekki
     pharmacy_url_149 = "novaapteekki.fi"
-    URLs_149_normi  = ['https://novaapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                       'https://novaapteekki.fi/fi/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                       'https://novaapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                       'https://novaapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
-                       'https://novaapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                       'https://novaapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                       'https://novaapteekki.fi/fi/somac-control-20-mg-enterotabl-14-fol.html']
+    URLs_149_normi  = ['https://app.treet.fi/pharmacy/nova-apteekki/product/131583',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/519994',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/056698',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/134589',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/048769',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/117648',
+                      'https://app.treet.fi/pharmacy/nova-apteekki/product/057965']
 
-    fetched_data_149 = nt.yliopistonapteekki(URLs_149_normi)
+    fetched_data_149 = seltuot.treet_selenium(URLs_149_normi)
 
     for i in fetched_data_149:
         i.append(pharmacy_url_149)
@@ -2485,13 +2481,13 @@ def keraa_tiedot():
 
     # Vihdin apteekki
     pharmacy_url_160 = "vihdinapteekki.fi"
-    URLs_160_normi = ['https://www.vihdinapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
-                      'https://www.vihdinapteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.vihdinapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
-                      'https://www.vihdinapteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
-                      'https://www.vihdinapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.vihdinapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
-                      'https://www.vihdinapteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html']
+    URLs_160_normi = ['https://verkkokauppa.vihdinapteekki.fi/fi/otrivin-menthol-sailytysaineeton-nenasumute-liuos-1-mg-ml-khone-pumppu-10-ml.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/tuotteet/allergia/zyrtec-10-mg-tabl-kalvopaall-30-fol.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/voltaren-forte-23-2-mg-g-geeli-100-g.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/tuotteet/matkalle-ja-mokille/hydrocortison-1-emuls-voide-20-g.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/tuotteet/kipu-ja-flunssa/kipu-ja-kuume/burana-400-mg-tabl-kalvopaall-30-fol.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/panadol-500-mg-tabl-kalvopaall-30-fol.html',
+                      'https://verkkokauppa.vihdinapteekki.fi/fi/tuotteet/vatsa/narastys/somac-control-20-mg-enterotabl-14-fol.html']
 
     fetched_data_160 = nt.yliopistonapteekki(URLs_160_normi)
 
@@ -3465,19 +3461,19 @@ def keraa_tiedot():
     medication.extend(fetched_data_224)
 
     # Kuhmon apteekki
-    pharmacy_url_225 = "suomiapteekki.fi"
-    URLs_225_normi = ['https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/056698',
-                      'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/057965',
-                      'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/117648',
-                      'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/519994',
-                      'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectID=26153002',
-                      'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectID=26153287']
-
-    fetched_data_225 = nt.pakilanapteekki(URLs_225_normi)
-
-    for i in fetched_data_225:
-        i.append(pharmacy_url_225)
-    medication.extend(fetched_data_225)
+    #pharmacy_url_225 = "suomiapteekki.fi"
+    #URLs_225_normi = ['https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/056698',
+    #                  'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/057965',
+    #                  'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/117648',
+    #                  'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectPath=/Shops/Kuhmonapteekki/Products/519994',
+    #                  'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectID=26153002',
+    #                  'https://www.suomiapteekki.fi/epages/Kuhmonapteekki.sf/fi_FI/?ObjectID=26153287']
+    #
+    #fetched_data_225 = nt.pakilanapteekki(URLs_225_normi)
+    #
+    #for i in fetched_data_225:
+    #    i.append(pharmacy_url_225)
+    #medication.extend(fetched_data_225)
 
     # Lähiapteekki syke
     pharmacy_url_226 = "etuapteekki.fi"
@@ -3705,7 +3701,7 @@ def keraa_tiedot():
                       'https://www.apteekkishop.fi/epages/ApteekkiShop.sf/fi_FI/?ObjectID=35854521',
                       'https://www.apteekkishop.fi/epages/ApteekkiShop.sf/fi_FI/?ObjectPath=/Shops/ApteekkiShop/Products/057965']
 
-    fetched_data_240 = nt.ivalonapteekki(URLs_240_normi)
+    fetched_data_240 = nt.pakilanapteekki(URLs_240_normi)
 
     for i in fetched_data_240:
         i.append(pharmacy_url_240)
@@ -3777,18 +3773,18 @@ def keraa_tiedot():
     for i in fetched_data_244:
         i.append(pharmacy_url_244)
     medication.extend(fetched_data_244)
-
+    
     # Pyhän Henrikin apteekki
     pharmacy_url_245 = "apteekkiverkkokauppa.fi"
-    URLs_245_normi = ['https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectID=25218679',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectID=24951573',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectPath=/Shops/PHA/Products/519994',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectID=24951604',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectPath=/Shops/PHA/Products/117648',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectPath=/Shops/PHA/Products/057965',
-                      'https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.sf/fi_FI/?ObjectID=24993188']
+    URLs_245_normi = ['https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/131583',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/519994',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/056698',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/134589',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/048769',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/117648',
+                      'https://app.treet.fi/pharmacy/pyhan-henrikin-apteekki/product/057965']
 
-    fetched_data_245 = nt.pakilanapteekki(URLs_245_normi)
+    fetched_data_245 = seltuot.treet_selenium(URLs_245_normi)
 
     for i in fetched_data_245:
         i.append(pharmacy_url_245)
@@ -3839,7 +3835,7 @@ def keraa_tiedot():
     for i in fetched_data_248:
         i.append(pharmacy_url_248)
     medication.extend(fetched_data_248)
-
+    
     # Aabenraa Love Apotek
     pharmacy_url_249 = "apoteket-online.dk/apotek/aabenraa-loeve-apotek"
     URLs_249_selenium = ['https://apoteket-online.dk/ipren-tabl-200-mg-184963',
@@ -3855,7 +3851,7 @@ def keraa_tiedot():
     for i in fetched_data_249:
         i.append(pharmacy_url_249)
     medication.extend(fetched_data_249)
-
+    
     # Aalborg Budolfi Apotek
     pharmacy_url_250 = "apoteket-online.dk/apotek/aalborg-budolfi-apotek"
     URLs_250_selenium = ['https://apoteket-online.dk/ipren-tabl-200-mg-184963',
@@ -5370,7 +5366,7 @@ def keraa_tiedot():
                       'https://apopro.dk/otrivin-menthol-ukonserveret-1-mgml-10-ml-naesespray-oploesning-423414',
                       'https://apopro.dk/mildison-lipid-10-mgg-haandkoeb-apoteksforbeholdt-15-g-creme-486750']
 
-    fetched_data_344 = nt.apopro(URLs_344_normi)
+    fetched_data_344 = seltuot.apopro_selenium(URLs_344_normi)
 
     for i in fetched_data_344:
         i.append(pharmacy_url_344)
@@ -5423,7 +5419,7 @@ def keraa_tiedot():
     for i in fetched_data_347:
         i.append(pharmacy_url_347)
     medication.extend(fetched_data_347)
-    
+
     # Ringsted apotek
     pharmacy_url_348 = "ringsted.dinapoteker.dk"
     URLs_348_selenium = ['https://ringsted.dinapoteker.dk/ipren-200-mg-p6366',
