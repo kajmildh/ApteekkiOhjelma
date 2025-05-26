@@ -235,7 +235,7 @@ def keraa_tiedot():
     for i in fetched_data_15:
         i.append(pharmacy_url_15)
     medication.extend(fetched_data_15)
-
+    
     # Akureyrarapotek
     pharmacy_url_16 = "akureyrarapotek.is"
     URLs_16_selenium = ['https://www.akureyrarapotek.is/verslun/lausasolulyf/histasin-10mg-30stk?q=histasin',
@@ -296,7 +296,7 @@ def keraa_tiedot():
     for i in fetched_data_19:
         i.append(pharmacy_url_19)
     medication.extend(fetched_data_19)
-
+    
     # Apomed
     pharmacy_url_20 = "apomed.no"
     URLs_20_selenium = ['https://www.apomed.no/ibux-tab-400mg-021630',
@@ -1109,8 +1109,7 @@ def keraa_tiedot():
                      'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/048769',
                      'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/056698',
                      'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/519994',
-                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/131583',
-                     '']
+                     'https://app.treet.fi/pharmacy/sonaatti-apteekki/product/131583']
 
     fetched_data_73 = seltuot.treet_selenium(URLs_73_normi)
 
@@ -5435,3 +5434,4 @@ def keraa_tiedot():
     for i in fetched_data_348:
         i.append(pharmacy_url_348)
     medication.extend(fetched_data_348)
+    

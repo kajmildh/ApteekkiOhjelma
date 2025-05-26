@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from selenium_stealth import stealth
 
 # Variables
-SLEEP_AFTER_URL = 7  # amount of sleep/waiting (s) after loading url and before scraping name and price
+SLEEP_AFTER_URL = 15  # amount of sleep/waiting (s) after loading url and before scraping name and price
 SLEEP_AFTER_DECLINEBUTTON = 7  # amount of sleep/waiting (s) after clicking all declinebuttons and before refreshing the page
 
 
@@ -726,10 +726,9 @@ def apohem_selenium(urls):
                 driver.get(url)
 
                 time.sleep(SLEEP_AFTER_URL)
-                print(driver.page_source)
 
                 product_name = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/following-sibling::h1").text
-                product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/div/span").text
+                product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/div/div/span").text
                 product_currency = 'SEK'
                 medication.append([product_name, product_price, product_currency, url])
             except Exception as e:

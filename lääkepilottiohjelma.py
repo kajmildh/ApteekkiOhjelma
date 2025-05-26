@@ -66,6 +66,7 @@ def main():
     success_uncleaned = save_data_with_fallback(data, uncleaned_filename)
 
     data['Hinta'] = data['Hinta'].apply(clean_price)
+    data['Hinta'] = pd.to_numeric(data['Hinta'], errors='coerce')
 
     success_cleaned = save_data_with_fallback(data, cleaned_filename)
 
