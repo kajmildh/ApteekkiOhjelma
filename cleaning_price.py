@@ -10,7 +10,7 @@ def clean_price(price):
     price_str = str(price).strip()
 
     # Handle prices with "kr" suffix by removing it
-    price_str = price_str.replace('kr.', '').replace('kr', '').replace('Kr', '').replace('Butikspris:','').strip().replace('€', '').replace('ISK', '')
+    price_str = price_str.replace('kr.', '').replace('kr*','').replace('kr', '').replace('Kr', '').replace('Butikspris:','').strip().replace('€', '').replace('ISK', '').replace('kroner.', '')
 
     # Check for spaces used as thousands separators and remove them
     if ' ' in price_str:

@@ -1,5 +1,3 @@
-from multiprocessing.managers import RemoteError
-
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
@@ -87,7 +85,7 @@ def yliopistonapteekki_selenium(urls, data_value, product_number):
     return medication
 
 
-def hjartat_selenium(urls):
+def hjartat_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -105,7 +103,10 @@ def hjartat_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for i in range(len(urls)):
@@ -117,10 +118,15 @@ def hjartat_selenium(urls):
                 product_name = driver.find_element(By.XPATH, "//main[@id='maincontent']/section/div/div/h1").text
                 product_price = driver.find_element(By.XPATH, "//main[@id='maincontent']//span[contains(text(), 'Butikspris:')]").text
                 product_currency = 'SEK'
-
-                medication.append([product_name, product_price, product_currency, urls[i]])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, urls[i]])
+                else:
+                    medication.append([product_name, product_price, product_currency, urls[i], '', ''])
             except Exception as e:
-                medication.append(['', '', '', urls[i]])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', urls[i]])
+                else:
+                    medication.append(['', '', '', urls[i], '', ''])
                 print(f"An error occurred for URL {urls[i]}: {e}")
 
     finally:
@@ -129,7 +135,7 @@ def hjartat_selenium(urls):
     return medication
 
 
-def herreapotek_selenium(urls):
+def herreapotek_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -145,10 +151,15 @@ def herreapotek_selenium(urls):
                 product_name = driver.find_element(By.XPATH, "//div[@class='payment-methods__wrapper']/parent::div/preceding-sibling::div/preceding-sibling::div/h1").text
                 product_price = driver.find_element(By.XPATH, "//div[@class='payment-methods__wrapper']/parent::div/preceding-sibling::div/div/div/span").text
                 product_currency = 'NOK'
-
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -158,7 +169,7 @@ def herreapotek_selenium(urls):
 
 
 
-def apoteket_selenium(urls):
+def apoteket_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -176,7 +187,10 @@ def apoteket_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
 
@@ -192,10 +206,15 @@ def apoteket_selenium(urls):
                 price_element = driver.find_element(By.XPATH, '//*[contains(@class, "inStorePrice")]')
                 product_price = price_element.text if price_element else 'Price not found'
                 product_currency = 'SEK'
-
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -204,7 +223,7 @@ def apoteket_selenium(urls):
     return medication
 
 
-def kronansapotek_selenium(urls):
+def kronansapotek_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -222,7 +241,10 @@ def kronansapotek_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for url in urls:
@@ -239,10 +261,15 @@ def kronansapotek_selenium(urls):
                 price_element = driver.find_element(By.XPATH, "//span[@data-testid='in-store-price']/span")
                 product_price = price_element.text if price_element else 'Price not found'
                 product_currency = 'SEK'
-
-                medication.append([product_name + ', ' + product_name_sub, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name + ', ' + product_name_sub, product_price, product_currency, url])
+                else:
+                    medication.append([product_name + ', ' + product_name_sub, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -251,7 +278,7 @@ def kronansapotek_selenium(urls):
     return medication
 
 
-def apotek1_selenium(urls):
+def apotek1_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -269,7 +296,10 @@ def apotek1_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for url in urls:
@@ -283,9 +313,15 @@ def apotek1_selenium(urls):
                 product_name = soup.find('h1', class_='product__name').get_text()
                 product_price = soup.find('p', class_='product-price__current').get_text()
                 product_currency = 'NOK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -441,7 +477,7 @@ def dinapoteker_selenium(urls):
     return medication
 
 
-def apomed_selenium(urls):
+def apomed_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -459,7 +495,10 @@ def apomed_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for url in urls:
@@ -473,9 +512,15 @@ def apomed_selenium(urls):
                 product_name = soup.find('h1', class_='productFullDetail-productName-6ZL').get_text()
                 product_price = soup.find('span', class_='price-root-vWW').get_text()
                 product_currency = 'NOK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -483,7 +528,7 @@ def apomed_selenium(urls):
 
     return medication
 
-def apotekdirekte_selenium(urls):
+def apotekdirekte_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -501,9 +546,15 @@ def apotekdirekte_selenium(urls):
                 product_name = soup.find('h1', class_='product-title-v1').get_text(strip=True)
                 product_price = soup.find('span', class_='product-price products_price').get_text(strip=True)
                 product_currency = 'NOK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -554,7 +605,7 @@ def apotekhjem_selenium(urls):
 
     return medication
 
-def appoteket_selenium(urls):
+def appoteket_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -573,9 +624,15 @@ def appoteket_selenium(urls):
                 price_element = driver.find_element(By.XPATH, """//div[@class='final-price inline-block']//*[contains(@id, "product-price-")]""")
                 product_price = price_element.text if price_element else 'Price not found'
                 product_currency = 'NOK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -612,7 +669,7 @@ def foodora_selenium(urls, ids):
     return medication
 
 
-def med24apotek_selenium(urls):
+def med24apotek_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -630,7 +687,10 @@ def med24apotek_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for url in urls:
@@ -644,9 +704,15 @@ def med24apotek_selenium(urls):
                 product_name = soup.find('section', class_='productInfo').find('h1', class_='hidden-xs-down').get_text()
                 product_price = soup.find('div', class_='currentPrice').find('span', class_='price').get_text()
                 product_currency = 'NOK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -700,7 +766,7 @@ def wolt_selenium(urls, currency, special_link):
     return medication
 
 
-def apohem_selenium(urls):
+def apohem_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -718,7 +784,10 @@ def apohem_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
         for url in urls:
@@ -730,9 +799,15 @@ def apohem_selenium(urls):
                 product_name = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/following-sibling::h1").text
                 product_price = driver.find_element(By.XPATH, "//button[@data-test-id='toggle-wishlist-item-button']/parent::div/parent::div/following-sibling::div/div/div/span").text
                 product_currency = 'SEK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -794,7 +869,7 @@ def apotea_selenium(urls):
     return medication
 
 
-def admenta_selenium(urls):
+def admenta_selenium(USE_CASE, urls):
     medication = []
     options = Options()
     options.add_argument('--headless')
@@ -810,9 +885,15 @@ def admenta_selenium(urls):
                 product_name = driver.find_element(By.XPATH, "//div[@id='gallery']/following-sibling::div/div/h1").text
                 product_price = driver.find_element(By.XPATH, '//span[contains(@x-text, "formatPrice")]').text
                 product_currency = 'SEK'
-                medication.append([product_name, product_price, product_currency, url])
+                if USE_CASE == 1:
+                    medication.append([product_name, product_price, product_currency, url])
+                else:
+                    medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                if USE_CASE == 1:
+                    medication.append(['', '', '', url])
+                else:
+                    medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -999,3 +1080,216 @@ def apopro_selenium(urls):
         driver.quit()
 
     return medication
+
+
+def joker_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.CLASS_NAME, "ws-product-details__title").text
+                product_name_sub = driver.find_element(By.CLASS_NAME, "ws-product-details__subtitle").text
+                product_price = driver.find_element(By.CLASS_NAME, "ws-price").find_element(By.XPATH, "//strong/span").get_attribute("aria-label")
+                product_currency = 'NOK'
+                medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def meny_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        try:
+            driver.get(urls[0])
+            wait = WebDriverWait(driver, 50)
+            decline_button = wait.until(
+                EC.element_to_be_clickable((By.ID, "declineButton")))
+
+            decline_button.click()
+
+            time.sleep(SLEEP_AFTER_DECLINEBUTTON)
+        except Exception as e:
+            for url in urls:
+                medication.append(['', '', '', url])
+            print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
+            return medication
+
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.CLASS_NAME, "ws-product-details__title").text
+                product_name_sub = driver.find_element(By.CLASS_NAME, "ws-product-details__subtitle").text
+                product_price = driver.find_element(By.CLASS_NAME, "ws-price").find_element(By.XPATH, "//strong/span").get_attribute("aria-label")
+                product_currency = 'NOK'
+                medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def coop_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.XPATH, "//*[@id='pageContent']/div/div[2]/div[1]/article/div/div[2]/div/div[1]/h1").text
+                product_price = driver.find_element(By.XPATH, "//*[@id='pageContent']/div/div[2]/div[1]/article/div/div[2]/div/div[2]/div[1]/div/div").text
+                product_currency = 'SEK'
+                medication.append([product_name, product_price, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def citygross_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.XPATH, "//div[@class='content-right']/div/h1").text
+                product_name_sub = driver.find_element(By.XPATH, "//div[@class='content-right']/div/p").text
+                product_price = driver.find_element(By.XPATH, "//div[@class='price-tag-container']/meta[3]").get_attribute("content")
+                product_currency = 'SEK'
+                medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def hemkop_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.XPATH, "//*[@id='__next']/div[2]/div[2]/div[1]/div/div[2]/h1").text
+                product_price = driver.find_element(By.XPATH, "//span[@data-testid='price-container']").text
+                product_currency = 'SEK'
+                medication.append([product_name, product_price, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def ica_selenium(stores_and_locations, urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for i in range(len(urls)):
+            store_index = i // 5
+            store_type = stores_and_locations[store_index][0]
+            location = stores_and_locations[store_index][1]
+            try:
+                driver.get(urls[i])
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.XPATH, "//*[@id='main']/div/div[2]/div/div[1]/h1").text
+                product_price = driver.find_element(By.XPATH, "//div[@data-test='price-container']").text
+                product_currency = 'SEK'
+                medication.append([product_name, product_price, product_currency, urls[i], store_type, location])
+            except Exception as e:
+                medication.append(['', '', '', urls[i], stores_and_locations[store_index][0], stores_and_locations[store_index][1]])
+                print(f"An error occurred for URL {urls[i]}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+
+def willys_selenium(urls):
+    medication = []
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
+
+    try:
+        for url in urls:
+            try:
+                driver.get(url)
+
+                time.sleep(SLEEP_AFTER_URL)
+
+                product_name = driver.find_element(By.XPATH, "//*[@id='__next']/div[1]/div[4]/main/section/div[2]/div/div/div[2]/div[2]/div[1]/div[1]/h2/span").text
+                product_price = driver.find_element(By.XPATH, "//*[@id='__next']/div[1]/div[4]/main/section/div[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/div/div/span[1]").text
+                product_price_cents = driver.find_element(By.XPATH, "//*[@id='__next']/div[1]/div[4]/main/section/div[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/div/div/div/span[1]").text
+                product_currency = 'SEK'
+                medication.append([product_name, product_price + '.' + product_price_cents, product_currency, url, '', ''])
+            except Exception as e:
+                medication.append(['', '', '', url])
+                print(f"An error occurred for URL {url}: {e}")
+
+    finally:
+        driver.quit()
+
+    return medication
+
+

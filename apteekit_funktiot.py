@@ -2,12 +2,17 @@ import selenium_tuotteet as seltuot
 import normi_tuotteet as nt
 
 medication = []
+medication_2 = []
 
 
 def keraa_tiedot():
 
-    # Tuurin apteekki
+    #Used for functions which are used in both "normal" and "pt-kauppa" versions.
+    #For USE_CASE = 1: final data has 5 columns
+    #For USE_CASE = 2: final data has 7 columns, including ICA Stores' store type and location
+    USE_CASE = 1
 
+    # Tuurin apteekki
     pharmacy_url_1 = "tuurinapteekki.fi"
     URLs_1_normi = ['https://www.tuurinapteekki.fi/fi/burana-400-mg-tabl-kalvopaall-30-fol.html',
                     'https://www.tuurinapteekki.fi/fi/hydrocortison-1-emuls-voide-20-g.html',
@@ -55,7 +60,7 @@ def keraa_tiedot():
                     'https://www.apotekhjartat.se/produkt/otrivin-menthol-nasspray-utan-konserveringsmedel-1mgoml/',
                     'https://www.apotekhjartat.se/produkt/hydrokortison-evolan-10-mgag-kram-20-g/']
 
-    fetched_data_4 = seltuot.hjartat_selenium(URLs_4_normi)
+    fetched_data_4 = seltuot.hjartat_selenium(USE_CASE, URLs_4_normi)
 
     for i in fetched_data_4:
         i.append(pharmacy_url_4)
@@ -70,7 +75,7 @@ def keraa_tiedot():
                        'https://www.apoteket.se/produkt/otrivin-menthol-utan-konserveringsmedel-nasspray-losning-1-mg-per-ml-10-ml-flaska-1570771/',
                        'https://www.apoteket.se/produkt/hydrokortison-evolan-kram-10-mg-per-g-20-g-tub-57582/']
 
-    fetched_data_5 = seltuot.apoteket_selenium(URLs_5_selenium)
+    fetched_data_5 = seltuot.apoteket_selenium(USE_CASE, URLs_5_selenium)
 
     for i in fetched_data_5:
         i.append(pharmacy_url_5)
@@ -86,7 +91,7 @@ def keraa_tiedot():
                        'https://www.kronansapotek.se/otrivin-nasspray-menthol-1mg-ml-10ml/p/389805/',
                        'https://www.kronansapotek.se/evolan-hydrokortison-kram/p/046776/']
 
-    fetched_data_6 = seltuot.kronansapotek_selenium(URLs_6_selenium)
+    fetched_data_6 = seltuot.kronansapotek_selenium(USE_CASE, URLs_6_selenium)
 
     for i in fetched_data_6:
         i.append(pharmacy_url_6)
@@ -102,7 +107,7 @@ def keraa_tiedot():
                        'https://www.apotek1.no/produkter/voltarol-forte-232mg-g-gel-100g-392871p',
                        'https://www.apotek1.no/produkter/zyrtec-10mg-tabletter-30stk-24101p']
 
-    fetched_data_7 = seltuot.apotek1_selenium(URLs_7_selenium)
+    fetched_data_7 = seltuot.apotek1_selenium(USE_CASE, URLs_7_selenium)
 
     for i in fetched_data_7:
         i.append(pharmacy_url_7)
@@ -118,7 +123,7 @@ def keraa_tiedot():
                     'https://www.vitusapotek.no/smerte%2c-feber-og-forkjolelse/nesespray/otrivin-mentol-nesespray-forkjolelse-1-mg-ml-10-ml/p/166451?s=qsearch&text=otrivin',
                     'https://www.vitusapotek.no/kroppspleie/after-sun/kjop-hydrokortison-krem-20g-%7c-vitusapotek/p/112847?s=qsearch&text=hydrokortison']
 
-    fetched_data_8 = nt.vitusapotek(URLs_8_normi)
+    fetched_data_8 = nt.vitusapotek(USE_CASE, URLs_8_normi)
 
     for i in fetched_data_8:
         i.append(pharmacy_url_8)
@@ -304,7 +309,7 @@ def keraa_tiedot():
                         'https://www.apomed.no/voltarol-forte-gel-23-2mg-g-392871',
                         'https://www.apomed.no/zyrtec-tab-10mg-024101']
 
-    fetched_data_20 = seltuot.apomed_selenium(URLs_20_selenium)
+    fetched_data_20 = seltuot.apomed_selenium(USE_CASE, URLs_20_selenium)
 
     for i in fetched_data_20:
         i.append(pharmacy_url_20)
@@ -320,7 +325,7 @@ def keraa_tiedot():
                         'https://www.apotekdirekte.no/products/voltarol-forte-gel-232mgg-100g',
                         'https://www.apotekdirekte.no/products/zyrtec-10mg-30-tabletter']
 
-    fetched_data_21 = seltuot.apotekdirekte_selenium(URLs_21_selenium)
+    fetched_data_21 = seltuot.apotekdirekte_selenium(USE_CASE, URLs_21_selenium)
 
     for i in fetched_data_21:
         i.append(pharmacy_url_21)
@@ -336,7 +341,7 @@ def keraa_tiedot():
                         'https://www.apotekfordeg.no/products/voltarol-forte-gel-232-mgg-100-g',
                         'https://www.apotekfordeg.no/products/zyrtec-10-mg-tabletter-30-stk']
 
-    fetched_data_22 = seltuot.apotekdirekte_selenium(URLs_22_selenium)
+    fetched_data_22 = seltuot.apotekdirekte_selenium(USE_CASE, URLs_22_selenium)
 
     for i in fetched_data_22:
         i.append(pharmacy_url_22)
@@ -351,7 +356,7 @@ def keraa_tiedot():
                      'https://www.apotekhjem.no/panodil-tab-500mg',
                      'https://www.apotekhjem.no/somac-control-enterotab-20mg']
 
-    fetched_data_23 = nt.apotekhjem(URLs_23_normi)
+    fetched_data_23 = nt.apotekhjem(USE_CASE, URLs_23_normi)
 
     for i in fetched_data_23:
         i.append(pharmacy_url_23)
@@ -367,7 +372,7 @@ def keraa_tiedot():
                      'https://www.apotera.no/otrivin-1-mg-ml-nesespray-med-mentol-voksne-10-ml',
                      'https://www.apotera.no/hydrokortison-evolan-10-mg-g-krem-20-g']
 
-    fetched_data_24 = nt.apoteraapotek(URLs_24_normi)
+    fetched_data_24 = nt.apoteraapotek(USE_CASE, URLs_24_normi)
 
     for i in fetched_data_24:
         i.append(pharmacy_url_24)
@@ -383,7 +388,7 @@ def keraa_tiedot():
                         'https://appoteket.no/otrivin-nesespray-mentol-1-mg-ml',
                         'https://appoteket.no/hydrokortison-1-evolan-10-mg-g-krem']
 
-    fetched_data_25 = seltuot.appoteket_selenium(URLs_25_selenium)
+    fetched_data_25 = seltuot.appoteket_selenium(USE_CASE, URLs_25_selenium)
 
     for i in fetched_data_25:
         i.append(pharmacy_url_25)
@@ -399,7 +404,7 @@ def keraa_tiedot():
                      'https://balderapotek.no/produkt/otrivin-nesespray-1mg-ml-mentol/',
                      'https://balderapotek.no/produkt/hydrokortison-trimb-krem-10mg/']
 
-    fetched_data_26 = nt.balderapotek(URLs_26_normi)
+    fetched_data_26 = nt.balderapotek(USE_CASE, URLs_26_normi)
 
     for i in fetched_data_26:
         i.append(pharmacy_url_26)
@@ -414,7 +419,7 @@ def keraa_tiedot():
                      'https://dameapoteket.no/shop/apotekvarer/otrivin-nesespray-1mgml-mentol-10-ml',
                      'https://dameapoteket.no/shop/apotekvarer/hydrokortison-evolan-10-mgg-krem-20-g']
 
-    fetched_data_27 = nt.dameapoteket(URLs_27_normi)
+    fetched_data_27 = nt.dameapoteket(USE_CASE, URLs_27_normi)
 
     for i in fetched_data_27:
         i.append(pharmacy_url_27)
@@ -430,7 +435,7 @@ def keraa_tiedot():
                      'https://www.farmasiet.no/catalog/feber-og-forkjolelse/nesespray-og-nesedraper/otrivin-nesespr-1mgml-mentol-10,5000195',
                      'https://www.farmasiet.no/catalog/allergi-og-astma/eksem/hydrokortison-evol-krem-10mgg-20,5113127?originName=Brand+Page']
 
-    fetched_data_28 = nt.farmasiet(URLs_28_normi)
+    fetched_data_28 = nt.farmasiet(USE_CASE, URLs_28_normi)
 
     for i in fetched_data_28:
         i.append(pharmacy_url_28)
@@ -446,7 +451,7 @@ def keraa_tiedot():
                      'https://herreapoteket.no/no/shop/apotekvarer/otrivin-1-mgml-nesespray-med-mentol-voksne-10-ml',
                      'https://herreapoteket.no/no/shop/apotekvarer/hydrokortison-evolan-10-mgg-krem-20-g']
 
-    fetched_data_29 = seltuot.herreapotek_selenium(URLs_29_normi)
+    fetched_data_29 = seltuot.herreapotek_selenium(USE_CASE, URLs_29_normi)
 
     for i in fetched_data_29:
         i.append(pharmacy_url_29)
@@ -462,7 +467,7 @@ def keraa_tiedot():
                         'https://www.med24.no/helse-og-livsstil/smerte-og-plager/forkjoelelse-og-influensa/otrivin-nesespray-mentol-1-mg-10-ml',
                         'https://www.med24.no/helse-og-livsstil/saar-og-skader/saarheling/hydrokortison-evolan-krem-1-prosent-20-gram']
 
-    fetched_data_30 = seltuot.med24apotek_selenium(URLs_30_selenium)
+    fetched_data_30 = seltuot.med24apotek_selenium(USE_CASE, URLs_30_selenium)
 
     for i in fetched_data_30:
         i.append(pharmacy_url_30)
@@ -478,7 +483,7 @@ def keraa_tiedot():
                      'https://osloapotek.no/products/otrivin-mentol-nesespray-forkjolelse-1-mg-ml?_pos=3&_psq=otrivin&_ss=e&_v=1.0',
                      'https://osloapotek.no/products/hydrokortison-evolan-krem-10-mg-g-20-gram-112848?_pos=1&_psq=hydrok&_ss=e&_v=1.0']
 
-    fetched_data_31 = nt.dittapotekopera(URLs_31_normi)
+    fetched_data_31 = nt.dittapotekopera(USE_CASE, URLs_31_normi)
 
     for i in fetched_data_31:
         i.append(pharmacy_url_31)
@@ -493,7 +498,7 @@ def keraa_tiedot():
                         'https://www.apohem.se/forkylning/bihaleinflammation/nasspray-och-tabletter/otrivin-nasspray-1mgml-10-ml',
                         'https://www.apohem.se/sar-bett-stick/bett-stick/efter-bett/hydrokortison-evolan-10-mgg-kram-20-g']
 
-    fetched_data_33 = seltuot.apohem_selenium(URLs_33_selenium)
+    fetched_data_33 = seltuot.apohem_selenium(USE_CASE, URLs_33_selenium)
 
     for i in fetched_data_33:
         i.append(pharmacy_url_33)
@@ -509,7 +514,7 @@ def keraa_tiedot():
                      'https://www.aposve.se/product/otrivin-menthol-1mg-ml-nasspray-10-ml/',
                      'https://www.aposve.se/product/hydrokortison-evolan-10-mg-g-kram-20-g/']
 
-    fetched_data_34 = nt.farmakeutAB(URLs_34_normi)
+    fetched_data_34 = nt.farmakeutAB(USE_CASE, URLs_34_normi)
 
     for i in fetched_data_34:
         i.append(pharmacy_url_34)
@@ -542,7 +547,7 @@ def keraa_tiedot():
                         'https://dozapotek.se/otrivin-menthol-utan-konserveringsmedel-nasspray-losning-1-mg-ml-10-milliliter-389805.html',
                         'https://dozapotek.se/hydrokortison-evolan-kram-10-mg-g-20-gram-046776.html']
 
-    fetched_data_36 = seltuot.admenta_selenium(URLs_36_selenium)
+    fetched_data_36 = seltuot.admenta_selenium(USE_CASE, URLs_36_selenium)
 
     for i in fetched_data_36:
         i.append(pharmacy_url_36)
@@ -558,7 +563,7 @@ def keraa_tiedot():
                      'https://www.meds.se/otrivin-menthol-nasspray-losning-1-mg-ml-10-ml',
                      'https://www.meds.se/evolan/hydrokortison-evolan-10-mg-g-20-gram-kram']
 
-    fetched_data_37 = nt.medsapotekAB(URLs_37_normi)
+    fetched_data_37 = nt.medsapotekAB(USE_CASE, URLs_37_normi)
 
     for i in fetched_data_37:
         i.append(pharmacy_url_37)
@@ -5434,4 +5439,568 @@ def keraa_tiedot():
     for i in fetched_data_348:
         i.append(pharmacy_url_348)
     medication.extend(fetched_data_348)
-    
+
+
+
+def keraa_tiedot_paivittaistavara():
+
+    #Used for functions which are used in both "normal" and "pt-kauppa" versions.
+    #For USE_CASE = 1: final data has 5 columns
+    #For USE_CASE = 2: final data has 7 columns, including ICA Stores' store type and location
+    USE_CASE = 2
+
+    # Apomed
+    pharmacy_url_1000 = "apomed.no"
+    URLs_1000_selenium = ['https://www.apomed.no/imodium-tab-2mg-126326',
+                        'https://www.apomed.no/voltarol-forte-gel-23-2mg-g-392871',
+                        'https://www.apomed.no/otrivin-nesespray-1mg-ml-166440',
+                        'https://www.apomed.no/zyrtec-tab-10mg-024101',
+                        'https://www.apomed.no/ibux-tab-200mg-153569',
+                        'https://www.apomed.no/paracet-tab-500mg-517128']
+
+    fetched_data_1000 = seltuot.apomed_selenium(USE_CASE, URLs_1000_selenium)
+
+    for i in fetched_data_1000:
+        i.append(pharmacy_url_1000)
+    medication_2.extend(fetched_data_1000)
+
+    # Apotek 1
+    pharmacy_url_1001 = "apotek1.no"
+    URLs_1001_selenium = ['https://www.apotek1.no/produkter/imodium-2mg-tabletter-16stk-126326p',
+                       'https://www.apotek1.no/produkter/voltarol-forte-232mg-g-gel-100g-392871p',
+                       'https://www.apotek1.no/produkter/otrivin-1mg-ml-nesespray-10ml-166440p',
+                       'https://www.apotek1.no/produkter/zyrtec-10mg-tabletter-30stk-24101p',
+                       'https://www.apotek1.no/produkter/ibux-200mg-tabletter-20stk-153569p',
+                       'https://www.apotek1.no/produkter/paracet-500mg-tabletter-20stk-517128p']
+
+    fetched_data_1001 = seltuot.apotek1_selenium(USE_CASE, URLs_1001_selenium)
+
+    for i in fetched_data_1001:
+        i.append(pharmacy_url_1001)
+    medication_2.extend(fetched_data_1001)
+
+    # Apotek for deg
+    pharmacy_url_1002 = "apotekfordeg.no"
+    URLs_1002_selenium = ['https://www.apotekfordeg.no/products/imodium-2-mg-tabletter-16-stk',
+                        'https://www.apotekfordeg.no/products/voltarol-forte-gel-232-mgg-100-g',
+                        'https://www.apotekfordeg.no/products/otrivin-1-mgml-nesespray-10-ml',
+                        'https://www.apotekfordeg.no/products/zyrtec-10-mg-tabletter-30-stk',
+                        'https://www.apotekfordeg.no/products/ibux-tabletter-200-mg-20-stk',
+                        'https://www.apotekfordeg.no/products/paracet-tabletter-500-mg-20-stk']
+
+    fetched_data_1002 = seltuot.apotekdirekte_selenium(USE_CASE, URLs_1002_selenium)
+
+    for i in fetched_data_1002:
+        i.append(pharmacy_url_1002)
+    medication_2.extend(fetched_data_1002)
+
+    # ApotekDirekte
+    pharmacy_url_1002 = "apotekdirekte.no"
+    URLs_1002_selenium = ['https://www.apotekdirekte.no/products/imodium-2mg-16-tab2',
+                        'https://www.apotekdirekte.no/products/voltarol-forte-gel-232mgg-100g',
+                        'https://www.apotekdirekte.no/products/otrivin-nesespray-1mgml-10ml',
+                        'https://www.apotekdirekte.no/products/zyrtec-10mg-30-tabletter',
+                        'https://www.apotekdirekte.no/products/ibux-tabletter-200mg-20-stk',
+                        'https://www.apotekdirekte.no/products/paracet-tabletter-500mg-20-stk']
+
+    fetched_data_1002 = seltuot.apotekdirekte_selenium(USE_CASE, URLs_1002_selenium)
+
+    for i in fetched_data_1002:
+        i.append(pharmacy_url_1002)
+    medication_2.extend(fetched_data_1002)
+
+    # Apotekhjem
+    pharmacy_url_1003 = "apotekhjem.no"
+    URLs_1003_normi = ['https://www.apotekhjem.no/apotek-nettapotek-imodium-tab-2mg',
+                     'https://www.apotekhjem.no/apotek-apotekhjem-voltarol-forte-gel-232mgg',
+                     'https://www.apotekhjem.no/otrivin-nesespray-1mgml',
+                     'https://www.apotekhjem.no/apotek-nettapotek-zyrtec-tab-10mg-30stk',
+                     'https://www.apotekhjem.no/ibux-tab-200mg',
+                     'https://www.apotekhjem.no/apotek-nettapotek-paracet-tab-500mg']
+
+    fetched_data_1003 = nt.apotekhjem(USE_CASE, URLs_1003_normi)
+
+    for i in fetched_data_1003:
+        i.append(pharmacy_url_1003)
+    medication_2.extend(fetched_data_1003)
+
+    # Apotera apotek
+    pharmacy_url_1004 = "apotera.no"
+    URLs_1004_normi = ['https://www.apotera.no/imodium-2-mg-tabletter-16-stk',
+                     'https://www.apotera.no/voltarol-forte-23-2-mg-g-gel-100-g',
+                     'https://www.apotera.no/otrivin-1-mg-ml-nesespray-voksne-10-ml',
+                     'https://www.apotera.no/zyrtec-10-mg-tabletter-30-stk',
+                     'https://www.apotera.no/ibux-200-mg-tabletter-20-stk',
+                     'https://www.apotera.no/paracet-500-mg-tabletter-20-stk']
+
+    fetched_data_1004 = nt.apoteraapotek(USE_CASE, URLs_1004_normi)
+
+    for i in fetched_data_1004:
+        i.append(pharmacy_url_1004)
+    medication_2.extend(fetched_data_1004)
+
+    # Appoteket
+    pharmacy_url_1005 = "appoteket.no"
+    URLs_1005_selenium = ['https://appoteket.no/otrivin-nesespray-1-mg-ml',
+                        'https://appoteket.no/zyrtec-10mg-tabletter-30stk',
+                        'https://appoteket.no/paracet-tabletter-500mg-20stk']
+
+    fetched_data_1005 = seltuot.appoteket_selenium(USE_CASE, URLs_1005_selenium)
+
+    for i in fetched_data_1005:
+        i.append(pharmacy_url_1005)
+    medication_2.extend(fetched_data_1005)
+
+    # Balder apotek
+    pharmacy_url_1006 = "balderapotek.no"
+    URLs_1006_normi = ['https://balderapotek.no/produkt/imodium-tabletter-2mg/',
+                     'https://balderapotek.no/produkt/voltarol-forte-gel-232mg-g/',
+                     'https://balderapotek.no/produkt/otrivin-nesespray-1mg-ml/',
+                     'https://balderapotek.no/produkt/zyrtec-tabletter-10-mg-30-stk/',
+                     'https://balderapotek.no/produkt/ibux-tabletter-200mg-20-stk/',
+                     'https://balderapotek.no/produkt/paracet-tabletter-500mg/']
+
+    fetched_data_1006 = nt.balderapotek(USE_CASE, URLs_1006_normi)
+
+    for i in fetched_data_1006:
+        i.append(pharmacy_url_1006)
+    medication_2.extend(fetched_data_1006)
+
+    # Boots Apotek
+    pharmacy_url_1007 = "boots.no"
+    URLs_1007_normi = ['https://www.boots.no/imodium-tabletter-2-mg-16-stk-126326',
+                    'https://www.boots.no/voltarol-forte-gel-23-2-mg-g-100g-392871',
+                    'https://www.boots.no/otrivin-nesespray-1-mg-ml-10-ml-166440',
+                    'https://www.boots.no/zyrtec-tabletter-10-mg-30-stk-024101',
+                    'https://www.boots.no/ibux-tabletter-200-mg-20-stk-153569',
+                    'https://www.boots.no/paracet-tabletter-500mg-20-stk-517128']
+
+    fetched_data_1007 = nt.bootsapotek(URLs_1007_normi)
+
+    for i in fetched_data_1007:
+        i.append(pharmacy_url_1007)
+    medication_2.extend(fetched_data_1007)
+
+    # Dameapoteket
+    pharmacy_url_1008 = "dameapoteket.no"
+    URLs_1008_normi = ['https://dameapoteket.no/shop/apotekvarer/imodium-2-mg-tabletter-16-stk',
+                     'https://dameapoteket.no/shop/apotekvarer/voltarol-forte-gel-232mgg-100-g',
+                     'https://dameapoteket.no/shop/apotekvarer/otrivin-nesespray-1mgml-10-ml',
+                     'https://dameapoteket.no/shop/apotekvarer/allergi/zyrtec-10-mg-tabletter-30-stk',
+                     'https://dameapoteket.no/shop/apotekvarer/ibux-tabletter-200mg-20-enpac',
+                     'https://dameapoteket.no/shop/apotekvarer/paracet-tabletter-500mg-20-enpac']
+
+    fetched_data_1008 = nt.dameapoteket(USE_CASE, URLs_1008_normi)
+
+    for i in fetched_data_1008:
+        i.append(pharmacy_url_1008)
+    medication_2.extend(fetched_data_1008)
+
+    # Ditt apotek opera
+    pharmacy_url_1009 = "osloapotek.no"
+    URLs_1009_normi = ['https://osloapotek.no/products/ibux-tabletter-400-mg-20-stykk-tablett?_pos=2&_psq=ibux&_ss=e&_v=1.0']
+
+    fetched_data_1009 = nt.dittapotekopera(USE_CASE, URLs_1009_normi)
+
+    for i in fetched_data_1009:
+        i.append(pharmacy_url_1009)
+    medication_2.extend(fetched_data_1009)
+
+    # Farmasiet
+    pharmacy_url_1010 = "farmasiet.no"
+    URLs_1010_normi = ['https://www.farmasiet.no/catalog/mage-og-tarm/diare/imodium-tab-2mg-16,5000088',
+                     'https://www.farmasiet.no/catalog/smerte/forstuelse/voltarol-forte-gel-232mgg-100,5001535',
+                     'https://www.farmasiet.no/catalog/feber-og-forkjolelse/nesespray-og-nesedraper/otrivin-nesespr-1mgml-10,5000194',
+                     'https://www.farmasiet.no/catalog/allergi-og-astma/pollenallergi/zyrtec-tab-10mg-30,5000298',
+                     'https://www.farmasiet.no/catalog/feber-og-forkjolelse/smertestillende-og-febernedsettende/ibux-tab-200mg-20,5000082',
+                     'https://www.farmasiet.no/catalog/feber-og-forkjolelse/smertestillende-og-febernedsettende/paracet-tab--500mg-20,5000208']
+
+    fetched_data_1010 = nt.farmasiet(USE_CASE, URLs_1010_normi)
+
+    for i in fetched_data_1010:
+        i.append(pharmacy_url_1010)
+    medication_2.extend(fetched_data_1010)
+
+    # Herreapoteket
+    pharmacy_url_1011 = "herreapoteket.no"
+    URLs_1011_normi = ['https://herreapoteket.no/shop/apotekvarer/imodium-2-mg-tabletter-16-stk',
+                     'https://herreapoteket.no/shop/apotekvarer/voltarol-forte-gel-232mgg-100-g',
+                     'https://herreapoteket.no/shop/apotekvarer/otrivin-nesespray-1mgml-10-ml',
+                     'https://herreapoteket.no/shop/apotekvarer/allergi/zyrtec-10-mg-tabletter-30-stk',
+                     'https://herreapoteket.no/shop/apotekvarer/ibux-tabletter-200mg-20-enpac',
+                     'https://herreapoteket.no/shop/apotekvarer/paracet-tabletter-500mg-20-enpac']
+
+    fetched_data_1011 = seltuot.herreapotek_selenium(USE_CASE, URLs_1011_normi)
+
+    for i in fetched_data_1011:
+        i.append(pharmacy_url_1011)
+    medication_2.extend(fetched_data_1011)
+
+    # Med24apotek
+    pharmacy_url_1012 = "med24.no"
+    URLs_1012_selenium = ['https://www.med24.no/helse-og-livsstil/smerte-og-plager/mage-og-tarm/imodium-tabletter-2mg-16-tabletter',
+                        'https://www.med24.no/helse-og-livsstil/smerte-og-plager/smertestillende/voltarol-forte-gel-23-2-mg-g-100-g',
+                        'https://www.med24.no/helse-og-livsstil/smerte-og-plager/forkjoelelse-og-influensa/otrivin-nesespray-1-mg-10-ml',
+                        'https://www.med24.no/helse-og-livsstil/smerte-og-plager/allergi/zyrtec-tabletter-10-mg-30-tabletter',
+                        'https://www.med24.no/helse-og-livsstil/smerte-og-plager/smertestillende/ibux-tabletter-200mg',
+                        'https://www.med24.no/helse-og-livsstil/smerte-og-plager/smertestillende/paracet-500-mg-tabletter']
+
+    fetched_data_1012 = seltuot.med24apotek_selenium(USE_CASE, URLs_1012_selenium)
+
+    for i in fetched_data_1012:
+        i.append(pharmacy_url_1012)
+    medication_2.extend(fetched_data_1012)
+
+    # Vitusapotek
+    pharmacy_url_1013 = "vitusapotek.no"
+    URLs_1013_normi = ['https://www.vitusapotek.no/mage-og-tarm/diare/imodium-tabletter-2-mg-16-stk/p/126326?text=Imodium%202%20mg%2016%20stk',
+                    'https://www.vitusapotek.no/sol%2c-fritid-og-reise/reiseapotek/smertestillende/voltarol-forte-gel-23%2c2mg-g-smertestillende-gel--100-g/p/392871',
+                    'https://www.vitusapotek.no/smerte%2c-feber-og-forkjolelse/nesespray/otrivin-1-mg-ml-nesespray-forkjolelse-10-ml/p/166440',
+                    'https://www.vitusapotek.no/allergimedisin/allergitabletter/zyrtec-tabletter-10-mg-30-stk/p/024101',
+                    'https://www.vitusapotek.no/sol%2c-fritid-og-reise/reiseapotek/smertestillende/ibux-tabletter-200-mg-20-stk/p/153569',
+                    'https://www.vitusapotek.no/smerte%2c-feber-og-forkjolelse/smertestillende/paracet-tabletter-500-mg-20-stk/p/517128']
+
+    fetched_data_1013 = nt.vitusapotek(USE_CASE, URLs_1013_normi)
+
+    for i in fetched_data_1013:
+        i.append(pharmacy_url_1013)
+    medication_2.extend(fetched_data_1013)
+
+    # Admenta Sweden AB
+    pharmacy_url_1014 = "dozapotek.se"
+    URLs_1014_selenium = ['https://dozapotek.se/refluxid-tuggtablett-180-mg-43-7-mg-30-tablett-er-544587.html',
+                        'https://dozapotek.se/voltaren-gel-23-2-mg-g-haleon-denmark-aps-100-gram-533022.html',
+                        'https://dozapotek.se/otrivin-nasspray-losning-1-mg-ml-10-milliliter-018176.html',
+                        'https://dozapotek.se/strepsils-honung-citron-sugtablett-24-styck-541169.html',
+                        'https://dozapotek.se/kestine-filmdragerad-tablett-10-mg-10-tablett-er-008700.html',
+                        'https://dozapotek.se/ipren-filmdragerad-tablett-400-mg-30-tablett-er-088534.html',
+                        'https://dozapotek.se/alvedon-munsonderfallande-tablett-500-mg-16-styck-007012.html']
+
+    fetched_data_1014 = seltuot.admenta_selenium(USE_CASE, URLs_1014_selenium)
+
+    for i in fetched_data_1014:
+        i.append(pharmacy_url_1014)
+    medication_2.extend(fetched_data_1014)
+
+    # Apohem
+    pharmacy_url_1015 = "apohem.se"
+    URLs_1015_selenium = ['https://www.apohem.se/mage-tarm/halsbranna-sura-uppstotningar/refluxid-180mg437mg-30-st',
+                        'https://www.apohem.se/vark-feber/ledvark-artros/voltaren-232-mgg-gel-100g',
+                        'https://www.apohem.se/forkylning/bihaleinflammation/nasspray-och-tabletter/otrivin-nasspray-1mgml-10-ml',
+                        'https://www.apohem.se/baby-barn-foralder/lilla-apoteket/forkylning-hos-barn/halsont-hos-barn/strepsils-honung-citron-24-sugtabletter',
+                        'https://www.apohem.se/sar-bett-stick/bett-stick/myggbett/kestine-filmdragerad-tablett-10-mg-10-st',
+                        'https://www.apohem.se/vark-feber/huvudvark/ipren-400mg-ibuprofen-30-tabletter',
+                        'https://www.apohem.se/vark-feber/huvudvark/alvedon-munsonderfallande-tabletter-500-mg-16-st']
+
+    fetched_data_1015 = seltuot.apohem_selenium(USE_CASE, URLs_1015_selenium)
+
+    for i in fetched_data_1015:
+        i.append(pharmacy_url_1015)
+    medication_2.extend(fetched_data_1015)
+
+    # Apotea AB NOT WORKING / CLOUDFLARE DETECTION
+    #
+    #pharmacy_url_35 = "apotea.se"
+    #URLs_35_selenium = ['https://www.apotea.se/ipren-filmdragerad-tablett-400-mg-30-st',
+    #                     'https://www.apotea.se/panodil-tablett-500-mg-20-st',
+    #                     'https://www.apotea.se/losec-enterotablett-20-mg-14-tabletter',
+    #                     'https://www.apotea.se/voltaren-gel-100-g',
+    #                     'https://www.apotea.se/clarityn-tablett-10-mg-30-st',
+    #                     'https://www.apotea.se/otrivin-menthol-nasspray-1-mg-per-ml-10-ml',
+    #                     'https://www.apotea.se/hydrokortison-evolan-kram-10-mgg-20-g']
+    #
+    #fetched_data_35 = seltuot.apotea_selenium(URLs_35_selenium)
+    #
+    #for i in fetched_data_35:
+    #    i.append(pharmacy_url_35)
+    #medication.extend(fetched_data_35)
+
+    # Hjärtat
+    pharmacy_url_1016 = "apotekhjartat.se"
+    URLs_1016_normi = ['https://www.apotekhjartat.se/varumarken/ipren/ipren-filmdragerad-tablett-400-mg-30-st',
+                    'https://www.apotekhjartat.se/varumarken/voltaren/voltaren-gel-232-mgg-100-g',
+                    'https://www.apotekhjartat.se/varumarken/otrivin/otrivin-nasspray-1-mgml-10-ml',
+                    'https://www.apotekhjartat.se/varumarken/strepsils/strepsils-honung-citron-sugtablett-24-st',
+                    'https://www.apotekhjartat.se/varumarken/kestine/kestine-filmdragerad-tablett-10-mg-10-st',
+                    'https://www.apotekhjartat.se/varumarken/alvedon/alvedon-munsonderfallande-tablett-500-mg-16-st']
+
+    fetched_data_1016 = seltuot.hjartat_selenium(USE_CASE, URLs_1016_normi)
+
+    for i in fetched_data_1016:
+        i.append(pharmacy_url_1016)
+    medication_2.extend(fetched_data_1016)
+
+    #Apoteket
+    pharmacy_url_1017 = "apoteket.se"
+    URLs_1017_selenium = ['https://www.apoteket.se/produkt/ipren-filmdragerad-tablett-400-mg-30-st-blister-114936/',
+                       'https://www.apoteket.se/produkt/refluxid-tuggtablett-180-mg-per-437-mg-30-st-blister-1409993/',
+                       'https://www.apoteket.se/produkt/voltaren-gel-232-mg-per-g-100-g-tub-250186/',
+                       'https://www.apoteket.se/produkt/otrivin-nasspray-losning-1-mg-per-ml-10-ml-flaska-57103/',
+                       'https://www.apoteket.se/produkt/strepsils-honung-och-citron-sugtablett-24-st-blister-214571/',
+                       'https://www.apoteket.se/produkt/kestine-filmdragerad-tablett-10-mg-10-st-blister-207474/',
+                       'https://www.apoteket.se/produkt/alvedon-munsonderfallande-tablett-500-mg-16-st-blister-206753/']
+
+    fetched_data_1017 = seltuot.apoteket_selenium(USE_CASE, URLs_1017_selenium)
+
+    for i in fetched_data_1017:
+        i.append(pharmacy_url_1017)
+    medication_2.extend(fetched_data_1017)
+
+    # Farmakeut AB
+    pharmacy_url_1018 = "aposve.se"
+    URLs_1018_normi = ['https://www.aposve.se/product/ipren-400-mg-30-filmdragerade-tabletter/',
+                     'https://www.aposve.se/product/otrivin-1mg-ml-nasspray-10-ml/',
+                     'https://www.aposve.se/product/voltaren-232-mg-g-gel-100g/',
+                     'https://www.aposve.se/product/strepsils-honung-citron-24-sugtabletter/',
+                     'https://www.aposve.se/product/kestine-10-mg-10-tabletter/',
+                     'https://www.aposve.se/product/alvedon-500-mg-16-munsonderfallande-tabletter/']
+
+    fetched_data_1018 = nt.farmakeutAB(USE_CASE, URLs_1018_normi)
+
+    for i in fetched_data_1018:
+        i.append(pharmacy_url_1018)
+    medication_2.extend(fetched_data_1018)
+
+    # Kronans Apotek
+    pharmacy_url_1019 = "kronansapotek.se"
+    URLs_1019_selenium = ['https://www.kronansapotek.se/Ipren-400-mg/p/088534/',
+                       'https://www.kronansapotek.se/refluxi-tuggtablett-180-mg/p/462700/',
+                       'https://www.kronansapotek.se/otrivin-nasspray-1mg-ml/p/018176/#isBuiltByGatsby=true',
+                       'https://www.kronansapotek.se/Voltaren-/p/533022/',
+                       'https://www.kronansapotek.se/strepsils-honung-ocg-citron-ont-i-halsen-sugtabletter-24-st/p/541169/#isBuiltByGatsby=true',
+                       'https://www.kronansapotek.se/Kestine-10-mg/p/008700/#isBuiltByGatsby=true',
+                       'https://www.kronansapotek.se/Alvedon/p/007012/#isBuiltByGatsby=true']
+
+    fetched_data_1019 = seltuot.kronansapotek_selenium(USE_CASE, URLs_1019_selenium)
+
+    for i in fetched_data_1019:
+        i.append(pharmacy_url_1019)
+    medication_2.extend(fetched_data_1019)
+
+    # Meds Apotek AB
+    pharmacy_url_1020 = "meds.se"
+    URLs_1020_normi = ['https://www.meds.se/ipren-filmdragerad-tablett-400-mg-30-st',
+                     'https://www.meds.se/otrivin-nasspray-losning-1-mg-ml-10-ml',
+                     'https://www.meds.se/strepsils-honung-citron-sugtabletter-24-st',
+                     'https://www.meds.se/voltaren-gel-23-2-mg-g-100-g',
+                     'https://www.meds.se/kestine-10-mg-tablett-10-st',
+                     'https://www.meds.se/alvedon-munsonderfallande-tablett-500-mg-16-st']
+
+    fetched_data_1020 = nt.medsapotekAB(USE_CASE, URLs_1020_normi)
+
+    for i in fetched_data_1020:
+        i.append(pharmacy_url_1020)
+    medication_2.extend(fetched_data_1020)
+
+    # NORJA PT-KAUPAT
+    # Joker
+    pharmacy_url_1021 = "joker.no"
+    URLs_1021_normi = ['https://joker.no/nettbutikk/varer/apotekvarer/smertestillende/paracet-tablett-7040885171283',
+                       'https://joker.no/nettbutikk/varer/apotekvarer/smertestillende/ibux-tabletter-7040881535690',
+                       'https://joker.no/nettbutikk/varer/apotekvarer/allergimidler/zyrtec-7046260230538',
+                       'https://joker.no/nettbutikk/varer/apotekvarer/nesespray/otrivin-nesespray-7046261664400']
+
+
+    fetched_data_1021 = seltuot.joker_selenium(URLs_1021_normi)
+
+    for i in fetched_data_1021:
+        i.append(pharmacy_url_1021)
+    medication_2.extend(fetched_data_1021)
+
+    # Meny | Monta sijaintia, eri hinta ilmeisesti vain Helgø MENY Stadionparken
+    pharmacy_url_1022 = "meny.no"
+    URLs_1022_selenium = ['https://meny.no/varer/apotekvarer/nesespray/otrivin-nesespray-7046261664400',
+                       'https://meny.no/varer/apotekvarer/fordoyelsesmidler/imodium-2mg-3574661671116',
+                       'https://meny.no/varer/apotekvarer/allergimidler/zyrtec-7046260230538',
+                       'https://meny.no/varer/apotekvarer/smertestillende/ibux-tabletter-7040881535690',
+                       'https://meny.no/varer/apotekvarer/smertestillende/paracet-tablett-7040885171283']
+
+    fetched_data_1022 = seltuot.meny_selenium(URLs_1022_selenium)
+
+    for i in fetched_data_1022:
+        i.append(pharmacy_url_1022)
+    medication_2.extend(fetched_data_1022)
+
+    # SPAR
+    pharmacy_url_1023 = "spar.no"
+    URLs_1023_normi = ['https://spar.no/nettbutikk/varer/apotekvarer/nesespray/otrivin-nesespray-7046261664516',
+                       'https://spar.no/nettbutikk/varer/apotekvarer/allergimidler/zyrtec-7046260230538',
+                       'https://spar.no/nettbutikk/varer/apotekvarer/smertestillende/ibux-tabletter-7040881535690',
+                       'https://spar.no/nettbutikk/varer/apotekvarer/smertestillende/paracet-tablett-7040885171283']
+
+    fetched_data_1023 = seltuot.joker_selenium(URLs_1023_normi)
+
+    for i in fetched_data_1023:
+        i.append(pharmacy_url_1023)
+    medication_2.extend(fetched_data_1023)
+
+    # ODA
+    pharmacy_url_1029 = "oda.com/no/"
+    URLs_1029_normi = ['https://oda.com/no/products/15525-imodium-imodium-2-mg-tabletter/',
+                       'https://oda.com/no/products/21958-otrivin-otrivin-nesespray-for-voksne-1mg-ml/',
+                       'https://oda.com/no/products/605-zyrtec-zyrtec-allergitabletter-10-mg-filmdrasjerte/',
+                       'https://oda.com/no/products/615-ibux-200-mg-tabletter/',
+                       'https://oda.com/no/products/608-paracet-paracet-500-mg-tablett/']
+
+    fetched_data_1029 = nt.oda(URLs_1029_normi)
+
+    for i in fetched_data_1029:
+        i.append(pharmacy_url_1029)
+    medication_2.extend(fetched_data_1029)
+
+    # RUOTSI PT-KAUPAT
+    # Coop Swe | eri hinnat eri sijaijnneissa
+    pharmacy_url_1024 = "coop.se"
+    URLs_1024_selenium = ['https://www.coop.se/handla/varor/halsa-tillskott/receptfria-lakemedel/forkylning/nasspray-utan-konserveringsmedel-5054563150820/',
+                          'https://www.coop.se/handla/varor/halsa-tillskott/receptfria-lakemedel/forkylning/halstablett-strepsils-honung-citron-7046265411697',
+                          'https://www.coop.se/handla/varor/halsa-tillskott/receptfria-lakemedel/allergi/allergitablett-ebastin-7046260087002',
+                          'https://www.coop.se/handla/varor/halsa-tillskott/receptfria-lakemedel/vark-feber/ipren-tablett-400-mg-7046260885349',
+                          'https://www.coop.se/handla/varor/halsa-tillskott/receptfria-lakemedel/vark-feber/alvedon-munsonderfallande-tablett-7046260070127']
+
+    fetched_data_1024 = seltuot.coop_selenium(URLs_1024_selenium)
+
+    for i in fetched_data_1024:
+        i.append(pharmacy_url_1024)
+    medication_2.extend(fetched_data_1024)
+
+    # City Gross
+    pharmacy_url_1025 = "citygross.se"
+    URLs_1025_selenium = ['https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/receptfria-lakemedel/otrivin-n%C3%A4sspray-utan-konserveringsmedel-p101583587_ST',
+                          'https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/mage/refluxid-reflux-tuggtablett-p101590379_ST',
+                          'https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/receptfria-lakemedel/strepsils-honungcitron-p101188193_ST',
+                          'https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/receptfria-lakemedel/kestine-10mg-p101136361_ST',
+                          'https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/receptfria-lakemedel/ipren-v%C3%A4rktabletter-400mg-p101059033_ST',
+                          'https://www.citygross.se/matvaror/apotek-och-receptfria-lakemedel/receptfria-lakemedel/alvedon-sm%C3%A4lttablett-v%C3%A4rkfeber-500mg-p101243645_ST']
+
+    fetched_data_1025 = seltuot.citygross_selenium(URLs_1025_selenium)
+
+    for i in fetched_data_1025:
+        i.append(pharmacy_url_1025)
+    medication_2.extend(fetched_data_1025)
+
+    # Hemköp
+    pharmacy_url_1026 = "hemkop.se"
+    URLs_1026_selenium = ['https://www.hemkop.se/produkt/Otrivin-Utan-Konserv-1mg-ml-Nasspray-101583587_ST',
+                          'https://www.hemkop.se/produkt/Refluxid-180mg-43-7mg-Tuggtablett-101590379_ST',
+                          'https://www.hemkop.se/produkt/Strepsils-Honung-och-Citron-Sugtabletter-101188193_ST',
+                          'https://www.hemkop.se/produkt/Kestine-10mg-Ebastin-Allergitablett-101136361_ST',
+                          'https://www.hemkop.se/produkt/Ipren-400mg-Tablett-101059033_ST',
+                          'https://www.hemkop.se/produkt/Alvedon-500mg-Munsonderfallande-Tablett-101243645_ST']
+
+    fetched_data_1026 = seltuot.hemkop_selenium(URLs_1026_selenium)
+
+    for i in fetched_data_1026:
+        i.append(pharmacy_url_1026)
+    medication_2.extend(fetched_data_1026)
+
+    # ICA | Nettisivulla valitse ensin sijainti ja sitten näät tuotteet
+    pharmacy_url_1027 = "ica.se"
+    URLs_1027_selenium = [#ICA Nära Banér, Tukholma // ICA NÄRA ISO
+                          'https://handlaprivatkund.ica.se/stores/1004414/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004414/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004414/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004414/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004414/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Folkes Livs, Uppsala // ICA NÄRA KESKI
+                          'https://handlaprivatkund.ica.se/stores/1004181/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004181/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004181/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004181/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004181/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Nära Boxholm, Boxholm // ICA NÄRA PIENI
+                          'https://handlaprivatkund.ica.se/stores/1004043/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004043/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004043/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004043/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004043/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Supermarket Sabbatsberg, Tukholma // ICA SUPERMARKET ISO
+                          'https://handlaprivatkund.ica.se/stores/1004134/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004134/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004134/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004134/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004134/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Supermarket Årstahallen, Uppsala // ICA SUPERMARKET KESKI
+                          'https://handlaprivatkund.ica.se/stores/1003426/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1003426/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1003426/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1003426/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1003426/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Supermarket Nossebro, Nossebro // ICA SUPERMARKET PIENI
+                          'https://handlaprivatkund.ica.se/stores/1004095/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004095/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004095/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004095/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004095/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #Maxi ICA Stormarknad Lindhagen, Tukholma // ICA MAXI ISO
+                          'https://handlaprivatkund.ica.se/stores/1003418/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1003418/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1003418/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1003418/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1003418/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #Maxi ICA Stormarknad Stenhagen Uppsala, Uppsala // ICA MAXI KESKI
+                          'https://handlaprivatkund.ica.se/stores/1004488/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004488/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004488/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004488/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004488/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #Maxi ICA Stormarknad Ulricehamn, Ulricehamn // ICA MAXI PIENI
+                          'https://handlaprivatkund.ica.se/stores/1003734/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1003734/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1003734/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1003734/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1003734/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Kvantum Kungsholmen, Tukholma // ICA KVANTUM ISO
+                          'https://handlaprivatkund.ica.se/stores/1004599/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004599/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004599/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004599/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004599/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Kvantum Uppsala, Uppsala // ICA KVANTUM KESKI
+                          'https://handlaprivatkund.ica.se/stores/1003871/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1003871/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1003871/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1003871/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1003871/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471',
+
+                          #ICA Kvantum Gislaved, Gislaved // ICA KVANTUM PIENI
+                          'https://handlaprivatkund.ica.se/stores/1004214/products/n%C3%A4sspray-1mg-ml-10ml-otrivin/2140030',
+                          'https://handlaprivatkund.ica.se/stores/1004214/products/strepsils-honung-citron-sugtablett-24-p/1378504',
+                          'https://handlaprivatkund.ica.se/stores/1004214/products/kestine-filmdragerande-tablett-10mg-10-p/1385577',
+                          'https://handlaprivatkund.ica.se/stores/1004214/products/ipren-filmdragerande-tablett-400mg-30-p/1378626',
+                          'https://handlaprivatkund.ica.se/stores/1004214/products/alvedon-muns%C3%B6nderfallande-tablett-500mg-16-p/1501471'
+                          ]
+    stores_and_locations = [('ICA Nära', 'Tukholma'), ('ICA Nära','Uppsala'), ('ICA Nära','Boxholm'),
+                            ('ICA Supermarket', 'Tukholma'), ('ICA Supermarket', 'Uppsala'), ('ICA Supermarket', 'Nossebro'),
+                            ('ICA Maxi', 'Tukholma'), ('ICA Maxi', 'Uppsala'), ('ICA Maxi', 'Ulricehamn'),
+                            ('ICA Kvantum','Tukholma'), ('ICA Kvantum', 'Uppsala'), ('ICA Kvantum', 'Gislaved')]
+
+    fetched_data_1027 = seltuot.ica_selenium(stores_and_locations, URLs_1027_selenium)
+
+    for i in fetched_data_1027:
+        i.append(pharmacy_url_1027)
+    medication_2.extend(fetched_data_1027)
+
+    # Willys
+    pharmacy_url_1028 = "willys.se"
+    URLs_1028_selenium = ['https://www.willys.se/produkt/Otrivin-Utan-Konserv-1mg-ml-Nasspray-101583587_ST',
+                          'https://www.willys.se/produkt/Refluxid-180mg-43-7mg-Tuggtablett-101590379_ST',
+                          'https://www.willys.se/produkt/Strepsils-Honung-och-Citron-Sugtabletter-101188193_ST',
+                          'https://www.willys.se/produkt/Kestine-10mg-Ebastin-Allergitablett-101136361_ST',
+                          'https://www.willys.se/produkt/Ipren-400mg-Tablett-101059033_ST']
+
+    fetched_data_1028 = seltuot.willys_selenium(URLs_1028_selenium)
+
+    for i in fetched_data_1028:
+        i.append(pharmacy_url_1028)
+    medication_2.extend(fetched_data_1028)
+
