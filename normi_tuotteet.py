@@ -15,6 +15,7 @@ def tuurinapteekki(urls):
             product_currency = soup.find('span', class_='price-container price-final_price tax').find('meta', itemprop='priceCurrency')
             medication.append([product_name, product_price['content'], product_currency['content'], url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -32,6 +33,7 @@ def yliopistonapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -52,12 +54,16 @@ def vitusapotek(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
 
 
-def bootsapotek(urls):
+def bootsapotek(USE_CASE, urls):
     medication = []
     for url in urls:
         try:
@@ -67,8 +73,15 @@ def bootsapotek(urls):
             product_name = soup.find('span', {'data-ui-id': 'page-title-wrapper'}).get_text()
             product_price = soup.find('span', class_='price').get_text()
             product_currency = 'NOK'
-            medication.append([product_name, product_price, product_currency, url])
+            if USE_CASE == 1:
+                medication.append([product_name, product_price, product_currency, url])
+            else:
+                medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -86,6 +99,7 @@ def lyfogheilsa(urls):
             product_currency = 'ISK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -103,6 +117,7 @@ def apoteketsvalen(urls):
             product_currency = 'DKK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -123,6 +138,10 @@ def apotekhjem(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -143,6 +162,10 @@ def apoteraapotek(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -163,6 +186,10 @@ def balderapotek(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -183,6 +210,10 @@ def dameapoteket(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -203,6 +234,10 @@ def farmasiet(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -224,6 +259,10 @@ def dittapotekopera(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -236,14 +275,18 @@ def farmakeutAB(USE_CASE, urls):
             response = requests.get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
 
-            product_name = soup.find('h2', class_='elementor-heading-title').get_text()
-            product_price = soup.find('span', class_='woocommerce-Price-amount amount').get_text()
+            product_name = soup.find('h5', class_='elementskit-section-subtitle').get_text().strip()
+            product_price = soup.find('span', class_='elementor-button-content-wrapper').find('span', class_='woocommerce-Price-amount amount').get_text()
             product_currency = 'SEK'
             if USE_CASE == 1:
                 medication.append([product_name, product_price, product_currency, url])
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -264,6 +307,10 @@ def medsapotekAB(USE_CASE, urls):
             else:
                 medication.append([product_name, product_price, product_currency, url, '', ''])
         except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -281,6 +328,7 @@ def oloapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -298,6 +346,7 @@ def pakilanapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -315,6 +364,7 @@ def ympyrätalonapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -332,6 +382,7 @@ def ivalonapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -349,6 +400,7 @@ def seitsemänveljeksenapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -366,6 +418,7 @@ def wiklundinapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -383,6 +436,7 @@ def koivukylänapteekki(urls):
             product_currency = 'EUR'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -400,6 +454,7 @@ def gazelle(urls):
             product_currency = 'DKK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -421,6 +476,7 @@ def ugleapotek(urls):
             product_currency = 'DKK'
             medication.append([product_name, product_price, product_currency, url])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
@@ -439,7 +495,73 @@ def oda(urls):
             product_currency = 'NOK'
             medication.append([product_name + ', ' + product_name_sub, product_price, product_currency, url, '', ''])
         except Exception as e:
+            medication.append(['', '', '', url])
             print(f"An error occurred for URL {url}: {e}")
 
     return medication
 
+
+def apofix(USE_CASE, urls):
+    medication = []
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            product_name = soup.find('product-page-block').find('h2').get_text()
+            product_price = soup.find('product-page-price').get_text()
+            product_currency = 'NOK'
+            if USE_CASE == 1:
+                medication.append([product_name, product_price, product_currency, url])
+            else:
+                medication.append([product_name, product_price, product_currency, url, '', ''])
+        except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
+            print(f"An error occurred for URL {url}: {e}")
+
+    return medication
+
+
+def vestretorv(USE_CASE, urls):
+    medication = []
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            product_name = soup.find('h1', class_='product_title entry-title').get_text()
+            product_price = soup.find('p', class_='price').get_text()
+            product_currency = 'NOK'
+            if USE_CASE == 1:
+                medication.append([product_name, product_price, product_currency, url])
+            else:
+                medication.append([product_name, product_price, product_currency, url, '', ''])
+        except Exception as e:
+            if USE_CASE == 1:
+                medication.append(['', '', '', url])
+            else:
+                medication.append(['', '', '', url, '', ''])
+            print(f"An error occurred for URL {url}: {e}")
+
+    return medication
+
+
+def harjavallanapteekki(urls):
+    medication = []
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            product_name = soup.find('h1', itemprop='name').get_text(strip=True)
+            product_price = soup.find('span', itemprop='price').get_text(strip=True)
+            product_currency = 'EUR'
+            medication.append([product_name, product_price, product_currency, url])
+        except Exception as e:
+            medication.append(['', '', '', url])
+            print(f"An error occurred for URL {url}: {e}")
+
+    return medication

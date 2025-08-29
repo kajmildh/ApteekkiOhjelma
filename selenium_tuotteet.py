@@ -57,7 +57,7 @@ def yliopistonapteekki_selenium(urls, data_value, product_number):
 
                 # Wait until the dropdown options are visible
                 option_to_select = wait.until(
-                    EC.element_to_be_clickable((By.CSS_SELECTOR, f"li[data-value='{data_value[i]}']")))
+                    EC.element_to_be_clickable((By.CSS_SELECTOR, f"option[value='{data_value[i]}']")))
 
                 # Click the desired option
                 option_to_select.click()
@@ -751,6 +751,8 @@ def wolt_selenium(urls, currency, special_link):
 
                 if special_link[i] == 1: #(lohja, koivuhaka); otrivin
                     product_name = driver.find_element(By.XPATH, "//*[@id=':R196piq:']/div/aside/div[2]/div/div/div/div[1]/div/h2").text
+                elif special_link[i] == 2: #ässäapteekki:
+                    product_name = driver.find_element(By.XPATH, "//*[@id='«R54r7aq»']/div/aside/div[2]/div/div[2]/div/div[1]/div/h2").text
                 else:
                     product_name = driver.find_element(By.XPATH, "//*[@id=':R196piq:']/div/aside/div[2]/div/div[2]/div/div[1]/div/h2").text
                 product_price = soup.find('span', {'data-test-id': 'product-modal.total-price'}).get_text()
@@ -1064,12 +1066,12 @@ def apopro_selenium(urls):
 
                 try:
                     product_name = driver.find_element(By.XPATH, "/html/body/main/article/section/div[2]/div[2]/div[2]/div[2]/h1").text
-                    product_desc = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[2]/ul/li[1]").text
+                    product_desc = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[2]/h1/span").text
                 except NoSuchElementException:
                     product_name = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[1]/h1").text
                     product_desc = driver.find_element(By.XPATH,"/html/body/main/article/section/div[2]/div[2]/div[2]/div[1]/ul/li[1]").text
 
-                product_price = driver.find_element(By.XPATH, "//span[@data-testid='pdp-price-per-unit']").text
+                product_price = driver.find_element(By.XPATH, "//div[@data-testid='pdp-price']").text
                 product_currency = 'DKK'
                 medication.append([product_name + ' ' + product_desc, product_price, product_currency, url])
             except Exception as e:
@@ -1101,7 +1103,7 @@ def joker_selenium(urls):
                 product_currency = 'NOK'
                 medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -1128,7 +1130,7 @@ def meny_selenium(urls):
             time.sleep(SLEEP_AFTER_DECLINEBUTTON)
         except Exception as e:
             for url in urls:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
             print(f"An error occurred while accessing the first URL or clicking the decline button: {e}")
             return medication
 
@@ -1144,7 +1146,7 @@ def meny_selenium(urls):
                 product_currency = 'NOK'
                 medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -1171,7 +1173,7 @@ def coop_selenium(urls):
                 product_currency = 'SEK'
                 medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -1199,7 +1201,7 @@ def citygross_selenium(urls):
                 product_currency = 'SEK'
                 medication.append([product_name + ' ' + product_name_sub, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -1226,7 +1228,7 @@ def hemkop_selenium(urls):
                 product_currency = 'SEK'
                 medication.append([product_name, product_price, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
@@ -1284,7 +1286,7 @@ def willys_selenium(urls):
                 product_currency = 'SEK'
                 medication.append([product_name, product_price + '.' + product_price_cents, product_currency, url, '', ''])
             except Exception as e:
-                medication.append(['', '', '', url])
+                medication.append(['', '', '', url, '', ''])
                 print(f"An error occurred for URL {url}: {e}")
 
     finally:
